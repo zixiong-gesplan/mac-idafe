@@ -1,7 +1,7 @@
 "use client"
 
-import { Counter } from "../atoms/Counter"
-import { useFadeInOnScroll } from "../../hooks/useGSAP"
+import { Counter } from "../../atoms/Counter"
+import { useFadeInOnScroll } from "../../../hooks/useGSAP"
 
 const stats = [
   { value: 150, suffix: "+", label: "Artículos publicados" },

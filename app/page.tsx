@@ -1,13 +1,13 @@
 import { GetPosts } from "./src/application/use-cases/GetPosts"
 import { PostRepositoryJSON } from "./src/infrastructure/repositories/PostRepositoryJSON"
 import { PostAdapter } from "./src/ui/adapters/PostAdapter"
-import { CategoriesSection } from "./src/ui/components/Section/Categories"
-import { FeaturedPostsSection } from "./src/ui/components/Section/FeaturedPosts"
-import { HeroSection } from "./src/ui/components/Section/Hero"
-import { PartnersSection } from "./src/ui/components/Section/Partners"
+import { CategoriesSection } from "./src/ui/components/molecules/Section/Categories"
+import { FeaturedPostsSection } from "./src/ui/components/molecules/Section/FeaturedPosts"
+import { HeroSection } from "./src/ui/components/molecules/Section/Hero"
+import { PartnersSection } from "./src/ui/components/molecules/Section/Partners"
 import { RecentPostsSection } from "./src/ui/components/RecentPostsSection"
 import { ScrollProgressSections } from "./src/ui/components/ScrollProgressSections"
-import { StatsSection } from "./src/ui/components/Section/Stats"
+import { StatsSection } from "./src/ui/components/molecules/Section/Stats"
 
 
 export const metadata = {

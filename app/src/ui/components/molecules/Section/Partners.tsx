@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { PartnerCard } from "../PartnerCard"
+import { PartnerCard } from "../../PartnerCard"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)

@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { useFadeInOnScroll, useStaggerOnScroll, useParallax } from "../../hooks/useGSAP"
+import { useFadeInOnScroll, useStaggerOnScroll, useParallax } from "../../../hooks/useGSAP"
 
 interface AnimatedSectionProps {
   children: ReactNode
