@@ -1,9 +1,9 @@
-import { TextReveal } from "@ui/components/TextReveal"
-import { GradientText } from "@ui/components/GradientText"
+import { TextReveal } from "@/app/src/ui/components/Text/Reveal"
+import { GradientText } from "@/app/src/ui/components/Text/Gradient"
 import { MagneticButton } from "@ui/components/MagneticButton"
-import { AnimatedCounter } from "@ui/components/AnimatedCounter"
+import { Counter } from "@/app/src/ui/components/Counter"
 import { ScrollStorySection } from "@ui/components/ScrollStorySection"
-import { AnimatedSection } from "@ui/components/AnimatedSection"
+import { AnimatedSection } from "@/app/src/ui/components/Section/Animated"
 import { TeamMemberCard } from "@ui/components/TeamMemberCard"
 import { TimelineEvent } from "@ui/components/TimelineEvent"
 import { ValueCard } from "@ui/components/ValueCard"
@@ -268,10 +268,10 @@ export default function AboutPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value={1200000} suffix="+" label="Lectores anuales" />
-            <AnimatedCounter value={850} suffix="+" label="Artículos publicados" />
-            <AnimatedCounter value={25} suffix="" label="Países alcanzados" />
-            <AnimatedCounter value={50} suffix="+" label="Escuelas aliadas" />
+            <Counter value={1200000} suffix="+" label="Lectores anuales" />
+            <Counter value={850} suffix="+" label="Artículos publicados" />
+            <Counter value={25} suffix="" label="Países alcanzados" />
+            <Counter value={50} suffix="+" label="Escuelas aliadas" />
           </div>
         </div>
       </section>

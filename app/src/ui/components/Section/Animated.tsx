@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { useFadeInOnScroll, useStaggerOnScroll, useParallax } from "../hooks/useGSAP"
+import { useFadeInOnScroll, useStaggerOnScroll, useParallax } from "../../hooks/useGSAP"
 
 interface AnimatedSectionProps {
   children: ReactNode
@@ -25,8 +25,8 @@ export function AnimatedSection({
   const ref = animation === "stagger" ? staggerRef : animation === "parallax" ? parallaxRef : fadeRef
 
   return (
-    <div ref={ref} className={className}>
+    <section ref={ref} className={className}>
       {children}
-    </div>
+    </section>
   )
 }

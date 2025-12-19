@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { TextReveal } from "./TextReveal"
-import { GradientText } from "./GradientText"
+import { TextReveal } from "./Text/Reveal"
+import { GradientText } from "./Text/Gradient"
 
 gsap.registerPlugin(ScrollTrigger)
 

@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { gsap } from "gsap"
-import { GradientText } from "./GradientText"
-import { MagneticButton } from "./MagneticButton"
-import { RippleEffect } from "./RippleEffect"
+import { GradientText } from "../Text/Gradient"
+import { MagneticButton } from "../MagneticButton"
+import { RippleEffect } from "../RippleEffect"
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)

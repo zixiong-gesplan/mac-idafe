@@ -1,8 +1,8 @@
 "use client"
 
-import { useCountUp } from "../hooks/useGSAP"
+import { useCountUp } from "../../hooks/useGSAP"
 
-interface AnimatedCounterProps {
+interface CounterProps {
   value: number
   suffix?: string
   duration?: number
@@ -10,7 +10,7 @@ interface AnimatedCounterProps {
   label: string
 }
 
-export function AnimatedCounter({ value, suffix = "", duration = 2, className = "", label }: AnimatedCounterProps) {
+export function Counter({ value, suffix = "", duration = 2, className = "", label }: CounterProps) {
   const { ref } = useCountUp(value, duration, suffix)
 
   return (

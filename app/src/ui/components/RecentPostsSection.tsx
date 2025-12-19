@@ -1,7 +1,7 @@
 "use client"
 
 import { PostCard } from "./PostCard"
-import { AnimatedSection } from "./AnimatedSection"
+import { AnimatedSection } from "./Section/Animated"
 import type { PostDTO } from "../adapters/PostAdapter"
 
 interface RecentPostsSectionProps {

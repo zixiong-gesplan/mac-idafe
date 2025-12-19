@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import "./animations.css"
 import { GSAPProvider } from "./src/ui/components/GSAPProvider"
-import { CustomCursor } from "./src/ui/components/CustomCursor"
 import { Navbar } from "./src/ui/components/Navbar"
 import { Footer } from "./src/ui/components/Footer"
 
@@ -56,7 +55,6 @@ export default function RootLayout({
     <html lang="es" className="bg-background" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         <GSAPProvider>
-          <CustomCursor />
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>

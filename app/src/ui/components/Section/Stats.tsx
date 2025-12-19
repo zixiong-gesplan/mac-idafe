@@ -1,7 +1,7 @@
 "use client"
 
-import { AnimatedCounter } from "./AnimatedCounter"
-import { useFadeInOnScroll } from "../hooks/useGSAP"
+import { Counter } from "../Counter"
+import { useFadeInOnScroll } from "../../hooks/useGSAP"
 
 const stats = [
   { value: 150, suffix: "+", label: "Artículos publicados" },
@@ -18,7 +18,7 @@ export function StatsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <AnimatedCounter
+            <Counter
               key={index}
               value={stat.value}
               suffix={stat.suffix}
