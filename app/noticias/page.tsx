@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect } from "react"
 import { NewsRepositoryJSON } from "@infrastructure/repositories/NewsRepositoryJSON"
@@ -9,6 +9,7 @@ import { NewsSearchBar } from "@ui/components/NewsSearchBar"
 import { NewsCategoryFilter } from "@ui/components/NewsCategoryFilter"
 import { NewsGrid } from "@ui/components/NewsGrid"
 import { NewsSidebar } from "@ui/components/NewsSidebar"
+import { Boundary } from "../src/ui/components/Boundary"
 
 
 // Initialize use case with repository
@@ -86,7 +87,7 @@ export default function NoticiasPage() {
       <div className="container mx-auto px-4 pb-20">
         {/* Search and Filters */}
         <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between mb-8">
-          <NewsSearchBar onSearch={setSearchQuery} placeholder="Buscar por tema, título o etiqueta..." />
+          <NewsSearchBar onSearch={setSearchQuery} placeholder="Buscar por tema, titulo o etiqueta..." />
           <div className="w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0">
             <NewsCategoryFilter
               categories={categories}
@@ -97,28 +98,32 @@ export default function NoticiasPage() {
         </div>
 
         {/* Results count */}
-        {(activeCategory || searchQuery) && (
+        <Boundary
+          when={!!activeCategory || !!searchQuery}
+          fallback={<div className="mb-6">&nbsp;</div>}
+        >
           <div className="mb-6 text-sm text-muted-foreground">
             {filteredNews.length} {filteredNews.length === 1 ? "resultado" : "resultados"}
             {activeCategory && ` en "${categories.find((c) => c.slug === activeCategory)?.name}"`}
             {searchQuery && ` para "${searchQuery}"`}
           </div>
-        )}
+        </Boundary>
 
         {/* Main Grid + Sidebar */}
         <div className="grid lg:grid-cols-[1fr_320px] gap-8">
           {/* News Grid */}
-          <div>
-            {filteredNews.length > 0 ? (
-              <NewsGrid news={filteredNews} showFeatured={!activeCategory && !searchQuery} />
-            ) : (
+          <Boundary
+            when={filteredNews.length > 0}
+            fallback={
               <div className="text-center py-20">
-                <div className="text-6xl mb-4">🔍</div>
+                <div className="text-6xl mb-4" aria-hidden="true">🔍</div>
                 <h3 className="text-xl font-bold mb-2">No se encontraron noticias</h3>
-                <p className="text-muted-foreground">Intenta con otros términos de búsqueda o categorías.</p>
+                <p className="text-muted-foreground">Intenta con otros terminos de busqueda o categorias.</p>
               </div>
-            )}
-          </div>
+            }
+          >
+            <NewsGrid news={filteredNews} showFeatured={!activeCategory && !searchQuery} />
+          </Boundary>
 
           {/* Sidebar */}
           <NewsSidebar recentNews={allNews.slice(0, 5)} popularTags={popularTags} />
@@ -127,3 +132,4 @@ export default function NoticiasPage() {
     </main>
   )
 }
+
