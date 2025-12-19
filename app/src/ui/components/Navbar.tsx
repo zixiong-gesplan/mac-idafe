@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import { gsap } from "gsap"
-import { DarkModeToggle } from "./DarkModeToggle"
-import { MagneticButton } from "./MagneticButton"
+import { DarkModeToggle } from "./atoms/DarkModeToggle"
+import { MagneticButton } from "./atoms/MagneticButton"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

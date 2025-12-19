@@ -1,8 +1,6 @@
 ﻿# Checklist de mejoras sugeridas
 
 ## Quick wins (1-2h)
-- Tipar estados en app/noticias/page.tsx con News[] y agregar boundary de carga/error con fallback legible.
-- Corregir textos con mojibake en app/noticias/page.tsx y mensajes de validacion en dominio (News.ts, Post.ts).
 - Clonar antes de sort en NewsRepositoryJSON.findRecent y en PostRepositoryJSON al ordenar.
 - Crear NewsAdapter similar a PostAdapter para DTOs y usarlo en UI.
 

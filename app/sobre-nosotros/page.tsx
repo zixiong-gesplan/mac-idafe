@@ -1,6 +1,6 @@
 import { TextReveal } from "@/app/src/ui/components/Text/Reveal"
 import { GradientText } from "@/app/src/ui/components/Text/Gradient"
-import { MagneticButton } from "@ui/components/MagneticButton"
+import { MagneticButton } from "@/app/src/ui/components/atoms/MagneticButton"
 import { Counter } from "@/app/src/ui/components/Counter"
 import { ScrollStorySection } from "@ui/components/ScrollStorySection"
 import { AnimatedSection } from "@/app/src/ui/components/Section/Animated"

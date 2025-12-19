@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { NewsCard } from "./NewsCard"
-import { MagneticButton } from "./MagneticButton"
+import { MagneticButton } from "./atoms/MagneticButton"
 
 gsap.registerPlugin(ScrollTrigger)
 

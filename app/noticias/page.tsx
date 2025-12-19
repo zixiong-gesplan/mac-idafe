@@ -10,7 +10,7 @@ import { NewsSearchBar } from "@ui/components/NewsSearchBar"
 import { NewsCategoryFilter } from "@ui/components/NewsCategoryFilter"
 import { NewsGrid } from "@ui/components/NewsGrid"
 import { NewsSidebar } from "@ui/components/NewsSidebar"
-import { Boundary } from "@ui/components/Boundary"
+import { Boundary } from "@/app/src/ui/components/atoms/Boundary"
 
 
 // Initialize use case with repository
