@@ -1,4 +1,4 @@
-# 🌍 EcoBlog - Plataforma de Educación Ambiental
+# 🌍 MAC-IDAFE - Plataforma de Educación Ambiental
 
 Plataforma de blogging educativa sobre sostenibilidad, cambio climático, biodiversidad y buenas prácticas ecológicas, construida con **arquitectura hexagonal** y las mejores prácticas de desarrollo.
 

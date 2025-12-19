@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PostPageProps) {
   }
 
   return {
-    title: `${post.title} | EcoBlog`,
+    title: `${post.title} | MAC-IDAFE`,
     description: post.excerpt,
   }
 }

@@ -11,7 +11,7 @@ import { StatsSection } from "./src/ui/components/StatsSection"
 
 
 export const metadata = {
-  title: "EcoBlog - Educación Ambiental para un Futuro Sostenible",
+  title: "MAC-IDAFE - Red Macaronesia de centros escolares par ala educación ambiental",
   description:
     "Aprende sobre sostenibilidad, cambio climático, biodiversidad y prácticas ecológicas. Contenido educativo de calidad sobre medio ambiente.",
 }

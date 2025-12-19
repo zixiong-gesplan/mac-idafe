@@ -32,7 +32,7 @@ export function Footer() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>EcoBlog</span>
+              <span>MAC-IDAFE</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Educación ambiental para un futuro sostenible. Juntos construimos un planeta más verde.

@@ -104,7 +104,7 @@ export function Navbar() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span>EcoBlog</span>
+            <span>MAC-IDAFE</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -124,13 +124,6 @@ export function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
-              href="/categorias"
-              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
-            >
-              Categorías
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-            </Link>
-            <Link
               href="/sobre-nosotros"
               className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
             >
@@ -143,10 +136,10 @@ export function Navbar() {
             <DarkModeToggle />
             <MagneticButton
               as="a"
-              href="/contacto"
+              href="#"
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ring"
             >
-              Contacto
+              Entrar
             </MagneticButton>
           </div>
 

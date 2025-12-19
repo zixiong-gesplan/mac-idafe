@@ -11,18 +11,18 @@ if (typeof window !== "undefined") {
 
 const partners = [
   {
-    name: "WWF",
+    name: "Gobierno de Canarias",
     description:
-      "Organización mundial dedicada a la conservación de la naturaleza y reducción de amenazas ambientales.",
-    logo: "/generic-panda-logo.png",
-    website: "https://www.worldwildlife.org",
+      "Servicio de Cambio Climático e Información Ambiental.",
+    logo: "https://www.kinewa.com/wp-content/uploads/2018/03/LOGOS-A.SantaCruzTenerife-G.Canarias_GOBIERNO-DE-CANARIAS.png",
+    website: "https://www.gobiernodecanarias.org/cambioclimatico/",
     category: "Conservación",
   },
   {
-    name: "Greenpeace",
-    description: "Activismo ecológico global para proteger el medio ambiente y promover la paz.",
+    name: "Gestión y Planeamiento Territorial y Ambiental S.A",
+    description: "Dirección de Medioambiente Las Palmas y Cambio Climático.",
     logo: "/greenpeace-logo.jpg",
-    website: "https://www.greenpeace.org",
+    website: "https://gesplan.es/",
     category: "Activismo",
   },
   {

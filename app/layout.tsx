@@ -14,7 +14,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "EcoBlog - Educación Ambiental para un Futuro Sostenible",
+  title: "MAC-IDAFE - Red Macaronesia de centros escolares par ala educación ambiental",
   description:
     "Aprende sobre sostenibilidad, cambio climático, biodiversidad y prácticas ecológicas. Contenido educativo de calidad sobre medio ambiente.",
   generator: "v0.app",

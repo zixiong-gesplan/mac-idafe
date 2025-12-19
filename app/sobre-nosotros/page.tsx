@@ -10,9 +10,9 @@ import { ValueCard } from "@ui/components/ValueCard"
 import { ParallaxImage } from "@ui/components/ParallaxImage"
 
 export const metadata = {
-  title: "Sobre Nosotros - EcoBlog",
+  title: "Sobre Nosotros - MAC-IDAFE",
   description:
-    "Conoce al equipo detrás de EcoBlog, nuestra misión de educación ambiental y cómo trabajamos por un futuro sostenible.",
+    "Conoce al equipo detrás de MAC-IDAFE, nuestra misión de educación ambiental y cómo trabajamos por un futuro sostenible.",
 }
 
 const teamMembers = [
@@ -62,7 +62,7 @@ const timelineEvents = [
     year: "2019",
     title: "El Inicio del Sueño Verde",
     description:
-      "EcoBlog nace como un pequeño proyecto personal de María García, con solo 5 artículos sobre conservación marina.",
+      "MAC-IDAFE nace como un pequeño proyecto personal de María García, con solo 5 artículos sobre conservación marina.",
   },
   {
     year: "2020",
@@ -237,7 +237,7 @@ export default function AboutPage() {
               />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  En EcoBlog creemos que la educación ambiental es la herramienta más poderosa para transformar nuestra
+                  En MAC-IDAFE creemos que la educación ambiental es la herramienta más poderosa para transformar nuestra
                   relación con el planeta. Nuestro objetivo es hacer que la ciencia del medio ambiente sea accesible,
                   interesante y, sobre todo,
                   <strong className="text-foreground"> accionable</strong>.
