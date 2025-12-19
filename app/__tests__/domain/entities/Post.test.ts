@@ -1,8 +1,8 @@
+import { Author } from "@/app/src/domain/entities/Author"
+import { Category } from "@/app/src/domain/entities/Category"
+import { Post } from "@/app/src/domain/entities/Post"
+import { Slug } from "@/app/src/domain/value-objects/Slug"
 import { describe, it, expect } from "vitest"
-import { Post } from "@/domain/entities/Post"
-import { Author } from "@/domain/entities/Author"
-import { Category } from "@/domain/entities/Category"
-import { Slug } from "@/domain/value-objects/Slug"
 
 describe("Post Entity", () => {
   const mockAuthor = Author.create({

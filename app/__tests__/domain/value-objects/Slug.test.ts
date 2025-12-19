@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest"
-import { Slug } from "@/domain/value-objects/Slug"
+import { Slug } from "@/app/src/domain/value-objects/Slug"
+
 
 describe("Slug Value Object", () => {
   describe("Creation from string", () => {

@@ -1,11 +1,10 @@
+import { PostRepository } from "@/app/src/application/ports/PostRepository"
+import { GetPosts } from "@/app/src/application/use-cases/GetPosts"
+import { Author } from "@/app/src/domain/entities/Author"
+import { Category } from "@/app/src/domain/entities/Category"
+import { Post } from "@/app/src/domain/entities/Post"
+import { Slug } from "@/app/src/domain/value-objects/Slug"
 import { describe, it, expect, beforeEach } from "vitest"
-import { GetPosts } from "@/application/use-cases/GetPosts"
-import { Post } from "@/domain/entities/Post"
-import { Author } from "@/domain/entities/Author"
-import { Category } from "@/domain/entities/Category"
-import { Slug } from "@/domain/value-objects/Slug"
-import type { PostRepository } from "@/application/ports/PostRepository"
-
 // Mock Repository
 class MockPostRepository implements PostRepository {
   private posts: Post[] = []
