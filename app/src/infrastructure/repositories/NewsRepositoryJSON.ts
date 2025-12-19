@@ -52,6 +52,7 @@ export class NewsRepositoryJSON implements NewsRepository {
   }
 
   async findRecent(limit = 6): Promise<News[]> {
-    return this.news.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime()).slice(0, limit)
+    const sortedNews = [...this.news].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+    return sortedNews.slice(0, limit)
   }
 }

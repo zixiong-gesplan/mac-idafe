@@ -87,7 +87,8 @@ export class PostRepositoryJSON implements PostRepository {
   }
 
   async findRecent(limit = 5): Promise<Post[]> {
-    return [...this.posts].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime()).slice(0, limit)
+    const sortedPosts = [...this.posts].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+    return sortedPosts.slice(0, limit)
   }
 
   async search(query: string): Promise<Post[]> {
