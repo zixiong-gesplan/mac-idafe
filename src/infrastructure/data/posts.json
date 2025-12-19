@@ -1,0 +1,114 @@
+[
+  {
+    "id": "1",
+    "title": "Cambio Climático: Entendiendo la Crisis Global",
+    "slug": "cambio-climatico-crisis-global",
+    "excerpt": "Una introducción completa al cambio climático, sus causas, efectos y qué podemos hacer para mitigar su impacto en nuestro planeta.",
+    "content": "# Cambio Climático: Entendiendo la Crisis Global\n\nEl cambio climático es uno de los desafíos más urgentes que enfrenta la humanidad. Las temperaturas globales han aumentado aproximadamente 1.1°C desde la era preindustrial, principalmente debido a las emisiones de gases de efecto invernadero.\n\n## Causas Principales\n\n1. **Combustibles fósiles**: La quema de carbón, petróleo y gas natural libera CO2 a la atmósfera\n2. **Deforestación**: La pérdida de bosques reduce la capacidad del planeta para absorber CO2\n3. **Agricultura intensiva**: Las prácticas agrícolas modernas generan metano y óxido nitroso\n\n## Efectos Observados\n\n- Aumento del nivel del mar\n- Eventos climáticos extremos más frecuentes\n- Pérdida de biodiversidad\n- Cambios en patrones de precipitación\n\n## Qué Podemos Hacer\n\nCada persona puede contribuir a la solución:\n\n- Reducir el consumo de energía\n- Usar transporte sostenible\n- Consumir productos locales y de temporada\n- Apoyar políticas climáticas progresistas\n\nLa acción colectiva es fundamental para enfrentar este desafío global.",
+    "author": {
+      "id": "author-1",
+      "name": "María García",
+      "bio": "Especialista en cambio climático y sostenibilidad ambiental",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "maria.garcia@ecoblog.example"
+    },
+    "categories": [
+      {
+        "id": "cat-1",
+        "name": "Cambio Climático",
+        "slug": "cambio-climatico",
+        "description": "Artículos sobre el calentamiento global y sus efectos",
+        "icon": "🌡️",
+        "color": "#ef4444"
+      }
+    ],
+    "tags": ["clima", "sostenibilidad", "medio ambiente"],
+    "publishedAt": "2024-01-15T10:00:00Z",
+    "readingTimeMinutes": 5,
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Guía Completa de Reciclaje en el Hogar",
+    "slug": "guia-reciclaje-hogar",
+    "excerpt": "Aprende a reciclar correctamente en casa con esta guía práctica que te ayudará a reducir tu huella ambiental.",
+    "content": "# Guía Completa de Reciclaje en el Hogar\n\nEl reciclaje es una de las formas más accesibles de contribuir a la protección del medio ambiente. Sin embargo, es importante hacerlo correctamente para que sea efectivo.\n\n## Tipos de Materiales Reciclables\n\n### Plásticos\n- **PET (1)**: Botellas de agua y refrescos\n- **HDPE (2)**: Envases de detergente y champú\n- **PP (5)**: Tapas y contenedores de comida\n\n### Papel y Cartón\n- Periódicos y revistas\n- Cajas de cartón (deben estar limpias y secas)\n- Papel de oficina\n\n### Vidrio\n- Botellas y frascos\n- Debe separarse por color en algunos municipios\n\n### Metales\n- Latas de aluminio\n- Latas de conservas\n\n## Consejos Prácticos\n\n1. **Limpia los envases**: Asegúrate de que estén vacíos y enjuagados\n2. **Separa correctamente**: Usa contenedores diferentes para cada material\n3. **Reduce el volumen**: Aplasta botellas y cajas para ahorrar espacio\n4. **Conoce tu sistema local**: Las normas varían según la localidad\n\n## Más Allá del Reciclaje\n\nRecuerda la regla de las 3R: **Reducir**, **Reutilizar** y **Reciclar**, en ese orden de prioridad.\n\nEl mejor residuo es el que no se genera.",
+    "author": {
+      "id": "author-2",
+      "name": "Carlos Martínez",
+      "bio": "Educador ambiental con 10 años de experiencia",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "carlos.martinez@ecoblog.example"
+    },
+    "categories": [
+      {
+        "id": "cat-2",
+        "name": "Reciclaje",
+        "slug": "reciclaje",
+        "description": "Todo sobre reciclaje y gestión de residuos",
+        "icon": "♻️",
+        "color": "#10b981"
+      }
+    ],
+    "tags": ["reciclaje", "residuos", "hogar sostenible"],
+    "publishedAt": "2024-01-20T14:30:00Z",
+    "readingTimeMinutes": 7,
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Energías Renovables: El Futuro es Ahora",
+    "slug": "energias-renovables-futuro",
+    "excerpt": "Descubre cómo las energías renovables están transformando el panorama energético mundial y cómo puedes aprovecharlas.",
+    "content": "# Energías Renovables: El Futuro es Ahora\n\nLa transición hacia energías limpias es fundamental para combatir el cambio climático y garantizar un futuro sostenible.\n\n## Tipos de Energías Renovables\n\n### Energía Solar\nLa energía del sol se captura mediante paneles fotovoltaicos o sistemas térmicos. Es la fuente de energía renovable que más rápido crece.\n\n**Ventajas:**\n- Abundante y accesible\n- Costos decrecientes\n- Mantenimiento mínimo\n\n### Energía Eólica\nGenerada por la fuerza del viento a través de aerogeneradores.\n\n**Ventajas:**\n- Muy eficiente\n- No genera emisiones\n- Uso múltiple del terreno\n\n### Energía Hidroeléctrica\nAprovecha la energía del agua en movimiento.\n\n### Biomasa\nUtiliza materia orgánica para generar energía.\n\n## Energías Renovables en Casa\n\nPuedes aprovechar las renovables en tu hogar:\n\n1. **Paneles solares**: Para electricidad o agua caliente\n2. **Aerogeneradores pequeños**: En zonas con viento constante\n3. **Biomasa**: Estufas de pellets\n\n## El Impacto Global\n\nLas renovables representan ya más del 30% de la capacidad eléctrica mundial y siguen creciendo exponencialmente.\n\nLa combinación de políticas públicas, innovación tecnológica y conciencia ciudadana está acelerando esta transformación necesaria.",
+    "author": {
+      "id": "author-1",
+      "name": "María García",
+      "bio": "Especialista en cambio climático y sostenibilidad ambiental",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "maria.garcia@ecoblog.example"
+    },
+    "categories": [
+      {
+        "id": "cat-3",
+        "name": "Energía",
+        "slug": "energia",
+        "description": "Energías renovables y eficiencia energética",
+        "icon": "⚡",
+        "color": "#f59e0b"
+      }
+    ],
+    "tags": ["energía solar", "renovables", "sostenibilidad"],
+    "publishedAt": "2024-01-25T09:00:00Z",
+    "readingTimeMinutes": 6,
+    "featured": false
+  },
+  {
+    "id": "4",
+    "title": "Biodiversidad: Por Qué Cada Especie Importa",
+    "slug": "biodiversidad-cada-especie-importa",
+    "excerpt": "La biodiversidad es esencial para el equilibrio de los ecosistemas. Aprende por qué debemos proteger cada forma de vida.",
+    "content": "# Biodiversidad: Por Qué Cada Especie Importa\n\nLa biodiversidad es la variedad de vida en la Tierra, y cada especie juega un papel crucial en el equilibrio de los ecosistemas.\n\n## ¿Qué es la Biodiversidad?\n\nComprende tres niveles:\n\n1. **Diversidad genética**: Variación dentro de las especies\n2. **Diversidad de especies**: Variedad de organismos\n3. **Diversidad de ecosistemas**: Variedad de hábitats\n\n## Por Qué es Importante\n\n### Servicios Ecosistémicos\n- **Polinización**: Las abejas polinizan el 75% de los cultivos\n- **Purificación del agua**: Los humedales filtran contaminantes\n- **Control de plagas**: Los depredadores naturales mantienen el equilibrio\n- **Captura de carbono**: Los bosques absorben CO2\n\n### Valor Intrínseco\nCada especie tiene derecho a existir, independientemente de su utilidad para los humanos.\n\n## Amenazas Actuales\n\n- Pérdida de hábitat\n- Cambio climático\n- Contaminación\n- Especies invasoras\n- Sobreexplotación\n\n## Cómo Proteger la Biodiversidad\n\n1. **Crea hábitats**: Jardines con plantas nativas\n2. **Reduce pesticidas**: Opta por control biológico\n3. **Consume responsable**: Apoya productos sostenibles\n4. **Educa**: Comparte conocimiento sobre la importancia de la biodiversidad\n\n## Un Futuro Biodiverso\n\nProteger la biodiversidad no es solo una cuestión ambiental, es fundamental para nuestra supervivencia y bienestar.",
+    "author": {
+      "id": "author-3",
+      "name": "Ana López",
+      "bio": "Bióloga especializada en conservación de especies",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "ana.lopez@ecoblog.example"
+    },
+    "categories": [
+      {
+        "id": "cat-4",
+        "name": "Biodiversidad",
+        "slug": "biodiversidad",
+        "description": "Conservación de especies y ecosistemas",
+        "icon": "🦋",
+        "color": "#8b5cf6"
+      }
+    ],
+    "tags": ["biodiversidad", "conservación", "ecosistemas"],
+    "publishedAt": "2024-02-01T11:00:00Z",
+    "readingTimeMinutes": 8,
+    "featured": true
+  }
+]

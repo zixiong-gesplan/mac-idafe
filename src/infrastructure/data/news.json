@@ -1,0 +1,134 @@
+[
+  {
+    "id": "news-1",
+    "title": "COP29: Histórico acuerdo para triplicar energías renovables",
+    "slug": "cop29-acuerdo-triplicar-renovables",
+    "excerpt": "Los líderes mundiales alcanzan un compromiso sin precedentes para acelerar la transición energética global hacia fuentes limpias.",
+    "content": "# COP29: Histórico acuerdo para triplicar energías renovables\n\nEn una decisión histórica, los 196 países participantes en la COP29 han acordado triplicar la capacidad global de energías renovables para 2030.\n\n## Puntos clave del acuerdo\n\n1. **Triplicar renovables**: De 3.400 GW actuales a 10.200 GW\n2. **Duplicar eficiencia**: Mejorar la eficiencia energética al doble del ritmo actual\n3. **Financiación**: $300 mil millones anuales para países en desarrollo\n\n## Reacciones internacionales\n\nEl acuerdo ha sido celebrado por organizaciones ambientales, aunque algunas señalan que los plazos deberían ser más ambiciosos.",
+    "author": {
+      "id": "author-1",
+      "name": "María García",
+      "bio": "Especialista en política climática internacional",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "maria.garcia@ecoblog.example"
+    },
+    "category": "Política Ambiental",
+    "categorySlug": "politica-ambiental",
+    "categoryColor": "#3b82f6",
+    "tags": ["COP29", "renovables", "acuerdo climático"],
+    "publishedAt": "2024-12-15T08:00:00Z",
+    "readingTimeMinutes": 4,
+    "featured": true,
+    "breaking": true
+  },
+  {
+    "id": "news-2",
+    "title": "Amazon: Nuevo récord de deforestación detenida en Brasil",
+    "slug": "amazon-record-deforestacion-detenida",
+    "excerpt": "Las políticas de protección del gobierno brasileño logran reducir la deforestación en un 45% respecto al año anterior.",
+    "content": "# Amazon: Nuevo récord de deforestación detenida en Brasil\n\nEl gobierno de Brasil ha anunciado que la deforestación en la Amazonía ha caído un 45% en comparación con el año anterior.\n\n## Medidas implementadas\n\n- Refuerzo de la vigilancia satelital\n- Mayor presencia de agentes ambientales\n- Multas más severas a infractores\n- Programas de desarrollo sostenible\n\n## Impacto esperado\n\nSe estima que esta reducción evitará la emisión de 150 millones de toneladas de CO2.",
+    "author": {
+      "id": "author-3",
+      "name": "Ana López",
+      "bio": "Corresponsal ambiental en Sudamérica",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "ana.lopez@ecoblog.example"
+    },
+    "category": "Conservación",
+    "categorySlug": "conservacion",
+    "categoryColor": "#10b981",
+    "tags": ["amazonas", "deforestación", "brasil"],
+    "publishedAt": "2024-12-14T14:30:00Z",
+    "readingTimeMinutes": 5,
+    "featured": true,
+    "breaking": false
+  },
+  {
+    "id": "news-3",
+    "title": "Tesla presenta batería solar con 30 años de vida útil",
+    "slug": "tesla-bateria-solar-30-anos",
+    "excerpt": "La nueva tecnología de almacenamiento promete revolucionar la energía doméstica con una durabilidad sin precedentes.",
+    "content": "# Tesla presenta batería solar con 30 años de vida útil\n\nTesla ha revelado su nueva generación de baterías Powerwall con una vida útil garantizada de 30 años.\n\n## Especificaciones técnicas\n\n- **Capacidad**: 20 kWh\n- **Eficiencia**: 98%\n- **Garantía**: 30 años\n- **Precio**: 40% menor que la generación anterior\n\n## Disponibilidad\n\nLas primeras unidades llegarán al mercado europeo en el primer trimestre de 2025.",
+    "author": {
+      "id": "author-2",
+      "name": "Carlos Martínez",
+      "bio": "Editor de tecnología limpia",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "carlos.martinez@ecoblog.example"
+    },
+    "category": "Tecnología Verde",
+    "categorySlug": "tecnologia-verde",
+    "categoryColor": "#f59e0b",
+    "tags": ["tesla", "baterías", "energía solar"],
+    "publishedAt": "2024-12-13T10:00:00Z",
+    "readingTimeMinutes": 3,
+    "featured": false,
+    "breaking": false
+  },
+  {
+    "id": "news-4",
+    "title": "ONU declara 2025 como Año Internacional del Océano",
+    "slug": "onu-2025-ano-internacional-oceano",
+    "excerpt": "La iniciativa busca movilizar recursos y conciencia global para proteger los ecosistemas marinos amenazados.",
+    "content": "# ONU declara 2025 como Año Internacional del Océano\n\nLa Asamblea General de las Naciones Unidas ha designado 2025 como el Año Internacional del Océano.\n\n## Objetivos principales\n\n1. Reducir la contaminación plástica marina en un 50%\n2. Proteger el 30% de los océanos como áreas marinas protegidas\n3. Restaurar ecosistemas de arrecifes de coral\n4. Implementar prácticas de pesca sostenible\n\n## Eventos programados\n\nSe celebrarán cumbres en Lisboa, Tokio y Ciudad del Cabo durante todo el año.",
+    "author": {
+      "id": "author-3",
+      "name": "Ana López",
+      "bio": "Bióloga marina y periodista ambiental",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "ana.lopez@ecoblog.example"
+    },
+    "category": "Océanos",
+    "categorySlug": "oceanos",
+    "categoryColor": "#06b6d4",
+    "tags": ["océanos", "ONU", "conservación marina"],
+    "publishedAt": "2024-12-12T16:00:00Z",
+    "readingTimeMinutes": 4,
+    "featured": true,
+    "breaking": false
+  },
+  {
+    "id": "news-5",
+    "title": "Europa aprueba ley para prohibir microplásticos en cosméticos",
+    "slug": "europa-prohibe-microplasticos-cosmeticos",
+    "excerpt": "La nueva regulación entrará en vigor en 2025 y eliminará 500.000 toneladas de microplásticos anuales.",
+    "content": "# Europa aprueba ley para prohibir microplásticos en cosméticos\n\nLa Unión Europea ha aprobado una legislación histórica que prohíbe los microplásticos añadidos intencionalmente en productos cosméticos.\n\n## Alcance de la prohibición\n\n- Exfoliantes faciales y corporales\n- Pastas de dientes\n- Geles de ducha\n- Productos de maquillaje\n- Protectores solares\n\n## Impacto estimado\n\nSe previene la liberación de más de 500.000 toneladas de microplásticos al medio ambiente cada año.",
+    "author": {
+      "id": "author-1",
+      "name": "María García",
+      "bio": "Especialista en política ambiental europea",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "maria.garcia@ecoblog.example"
+    },
+    "category": "Legislación",
+    "categorySlug": "legislacion",
+    "categoryColor": "#8b5cf6",
+    "tags": ["microplásticos", "europa", "cosméticos"],
+    "publishedAt": "2024-12-11T09:00:00Z",
+    "readingTimeMinutes": 3,
+    "featured": false,
+    "breaking": false
+  },
+  {
+    "id": "news-6",
+    "title": "Científicos descubren nueva especie de coral resistente al calor",
+    "slug": "nueva-especie-coral-resistente-calor",
+    "excerpt": "El hallazgo en aguas del Pacífico abre esperanzas para la restauración de arrecifes afectados por el cambio climático.",
+    "content": "# Científicos descubren nueva especie de coral resistente al calor\n\nUn equipo internacional de biólogos marinos ha identificado una nueva especie de coral con resistencia natural al blanqueamiento térmico.\n\n## Características únicas\n\n- Tolera temperaturas hasta 2°C superiores a otras especies\n- Mantiene simbiosis con algas incluso bajo estrés térmico\n- Recuperación rápida tras eventos de calor extremo\n\n## Aplicaciones potenciales\n\nLos investigadores planean utilizar los genes de esta especie para desarrollar programas de restauración de arrecifes.",
+    "author": {
+      "id": "author-3",
+      "name": "Ana López",
+      "bio": "Bióloga marina especializada en corales",
+      "avatar": "/placeholder.svg?height=80&width=80",
+      "email": "ana.lopez@ecoblog.example"
+    },
+    "category": "Ciencia",
+    "categorySlug": "ciencia",
+    "categoryColor": "#ec4899",
+    "tags": ["corales", "biodiversidad", "investigación"],
+    "publishedAt": "2024-12-10T11:30:00Z",
+    "readingTimeMinutes": 5,
+    "featured": false,
+    "breaking": false
+  }
+]

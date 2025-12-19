@@ -1,36 +1,203 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 EcoBlog - Plataforma de Educación Ambiental
 
-## Getting Started
+Plataforma de blogging educativa sobre sostenibilidad, cambio climático, biodiversidad y buenas prácticas ecológicas, construida con **arquitectura hexagonal** y las mejores prácticas de desarrollo.
 
-First, run the development server:
+## 🏗️ Arquitectura
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este proyecto implementa **Clean Architecture (Arquitectura Hexagonal)** con separación clara de responsabilidades:
+
+```
+src/
+├── domain/              # ⭐ Capa de Dominio (Núcleo del negocio)
+│   ├── entities/        # Entidades: Post, Author, Category
+│   ├── value-objects/   # Value Objects: Slug
+│   └── types/           # Tipos de dominio
+│
+├── application/         # 🎯 Capa de Aplicación (Casos de uso)
+│   ├── use-cases/       # GetPosts, GetPostBySlug, SearchPosts
+│   └── ports/           # Interfaces (PostRepository)
+│
+├── infrastructure/      # 🔌 Capa de Infraestructura (Adaptadores)
+│   ├── repositories/    # Implementaciones (PostRepositoryJSON)
+│   └── data/            # Datos (posts.json)
+│
+└── ui/                  # 🎨 Capa de Presentación (UI)
+    ├── components/      # Componentes React
+    └── adapters/        # Adaptadores UI (PostAdapter)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Flujo de Dependencias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+UI → Application → Domain ← Infrastructure
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Dominio**: Independiente, no conoce capas externas
+- **Aplicación**: Define contratos (ports), usa dominio
+- **Infraestructura**: Implementa ports, depende de dominio
+- **UI**: Usa casos de uso, presenta información
 
-## Learn More
+## 🧪 Estrategia de Testing
 
-To learn more about Next.js, take a look at the following resources:
+### ¿Qué testear?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ **SÍ testear:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Reglas de negocio (Dominio)**
+   - Validaciones de entidades
+   - Lógica de negocio
+   - Value Objects
 
-## Deploy on Vercel
+2. **Casos de uso (Aplicación)**
+   - Flujo de la lógica
+   - Interacción con repositorios
+   - Filtrado y ordenamiento
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Comportamiento crítico**
+   - Publicación de posts
+   - Búsqueda y filtros
+   - Navegación
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+❌ **NO testear:**
+
+- Detalles de implementación de UI
+- Estilos CSS
+- Configuración de frameworks
+- Third-party libraries
+
+### Ejecutar Tests
+
+```bash
+# Unit tests
+npm test
+
+# Watch mode
+npm test -- --watch
+
+# Coverage
+npm test:coverage
+
+# UI interactiva
+npm test:ui
+```
+
+### Tipos de Tests
+
+```typescript
+// Unit Test (Dominio)
+describe('Post Entity', () => {
+  it('should validate minimum content length', () => {
+    expect(() => Post.create({ content: 'short' }))
+      .toThrow('El contenido debe tener al menos 100 caracteres')
+  })
+})
+
+// Integration Test (Casos de uso)
+describe('GetPosts Use Case', () => {
+  it('should return only published posts', async () => {
+    const posts = await useCase.execute()
+    expect(posts.every(p => p.isPublished())).toBe(true)
+  })
+})
+```
+
+## 🎨 Design System Eco-Friendly
+
+### Principios de Diseño
+
+1. **Performance = Sostenibilidad**
+   - Fuentes del sistema (sin descargas)
+   - Imágenes optimizadas
+   - CSS nativo + Tailwind
+   - Sin dependencias pesadas
+
+2. **Accesibilidad (WCAG)**
+   - Contraste adecuado (4.5:1 mínimo)
+   - Navegación por teclado
+   - HTML semántico
+   - Screen reader friendly
+
+3. **CSS Moderno**
+   - CSS Variables para theming
+   - `prefers-color-scheme` para modo oscuro
+   - Flexbox y Grid para layouts
+   - Container queries preparadas
+
+### Paleta de Colores
+
+```css
+/* Verde principal (sostenibilidad) */
+--color-primary: #16a34a (light) / #22c55e (dark)
+
+/* Neutrales minimalistas */
+--color-background: #ffffff / #0a0a0a
+--color-foreground: #0a0a0a / #fafafa
+```
+
+## 🚀 Stack Técnico
+
+| Tecnología | Justificación |
+|------------|---------------|
+| **Next.js 16** | Server Components, App Router, SEO nativo |
+| **TypeScript** | Type safety, mejor DX |
+| **Tailwind CSS** | Utility-first, performance, CSS moderno |
+| **Vitest** | Testing rápido, compatible TS |
+| **React 19** | Último estándar, mejor performance |
+
+### ¿Por qué este stack?
+
+- **Eco-friendly**: Server Components = menos JavaScript en cliente
+- **Performance**: Fuentes del sistema, CSS optimizado
+- **Mantenibilidad**: Arquitectura hexagonal, tipado estricto
+- **Escalabilidad**: Fácil agregar features sin romper existentes
+
+## 📦 Instalación y Uso
+
+```bash
+# Instalar dependencias
+npm install
+
+# Desarrollo
+npm run dev
+
+# Producción
+npm run build
+npm start
+
+# Testing
+npm test
+```
+
+## 🔮 Futuras Mejoras
+
+### Funcionalidades
+- [ ] Sistema de comentarios
+- [ ] Autenticación de usuarios
+- [ ] Panel de administración
+- [ ] RSS Feed
+- [ ] Newsletter
+- [ ] Internacionalización (i18n)
+
+### Técnicas
+- [ ] Server Actions para formularios
+- [ ] Optimistic UI updates
+- [ ] Infinite scroll
+- [ ] Full-text search con Algolia/MeiliSearch
+- [ ] Analytics de sostenibilidad (CO2 por visita)
+
+### Testing
+- [ ] E2E tests con Playwright
+- [ ] Visual regression tests
+- [ ] Performance budgets
+- [ ] Accessibility automated tests
+
+## 📚 Recursos de Aprendizaje
+
+- [Clean Architecture - Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+
+---
+
+**Nota**: Este proyecto es educativo y demuestra buenas prácticas de arquitectura, testing y sostenibilidad digital.
