@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { useRef, useState, type MouseEvent, type ReactNode } from "react"
 
 interface RippleEffectProps {

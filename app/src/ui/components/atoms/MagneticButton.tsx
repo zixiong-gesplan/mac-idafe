@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { useRef, type ReactNode, type MouseEvent } from "react"
 import { gsap } from "gsap"
 

@@ -1,6 +1,7 @@
 "use client"
 
-import { useTextReveal } from "../../hooks/useGSAP"
+import React from "react"
+import { useTextReveal } from "../../../hooks/useGSAP"
 
 interface AnimatedTextProps {
   children: string

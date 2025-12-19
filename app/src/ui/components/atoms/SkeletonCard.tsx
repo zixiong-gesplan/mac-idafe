@@ -1,3 +1,4 @@
+import React from "react"
 export function SkeletonCard() {
   return (
     <div className="bg-card rounded-lg border border-border overflow-hidden p-6">

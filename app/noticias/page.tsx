@@ -1,5 +1,5 @@
 ﻿"use client"
-
+import React from "react"
 import { useState, useEffect } from "react"
 import { NewsRepositoryJSON } from "@infrastructure/repositories/NewsRepositoryJSON"
 import { GetNews } from "@application/use-cases/GetNews"
