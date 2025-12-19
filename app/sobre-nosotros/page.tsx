@@ -1,7 +1,7 @@
 import { TextReveal } from "@/app/src/ui/components/atoms/Text/Reveal"
 import { GradientText } from "@/app/src/ui/components/atoms/Text/Gradient"
 import { MagneticButton } from "@/app/src/ui/components/atoms/MagneticButton"
-import { Counter } from "@/app/src/ui/components/Counter"
+import { Counter } from "@/app/src/ui/components/atoms/Counter"
 import { ScrollStorySection } from "@ui/components/ScrollStorySection"
 import { AnimatedSection } from "@/app/src/ui/components/Section/Animated"
 import { TeamMemberCard } from "@ui/components/TeamMemberCard"

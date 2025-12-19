@@ -1,6 +1,6 @@
 "use client"
 
-import { useCountUp } from "../../hooks/useGSAP"
+import { useCountUp } from "../../../hooks/useGSAP"
 
 interface CounterProps {
   value: number

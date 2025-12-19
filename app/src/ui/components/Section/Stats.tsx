@@ -1,6 +1,6 @@
 "use client"
 
-import { Counter } from "../Counter"
+import { Counter } from "../atoms/Counter"
 import { useFadeInOnScroll } from "../../hooks/useGSAP"
 
 const stats = [
