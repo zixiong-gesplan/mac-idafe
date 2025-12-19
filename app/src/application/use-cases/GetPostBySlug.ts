@@ -1,5 +1,5 @@
-import type { Post } from "../../domain/entities/Post"
-import type { PostRepository } from "../ports/PostRepository"
+import type { Post } from "@domain/entities/Post"
+import type { PostRepository } from "@application/ports/PostRepository"
 
 export class GetPostBySlug {
   constructor(private postRepository: PostRepository) {}

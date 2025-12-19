@@ -1,9 +1,9 @@
-import { Post } from "../../domain/entities/Post"
-import { Author } from "../../domain/entities/Author"
-import { Category } from "../../domain/entities/Category"
-import { Slug } from "../../domain/value-objects/Slug"
-import type { PostRepository, PostFilters } from "../../application/ports/PostRepository"
-import postsData from "../data/posts.json"
+import { Post } from "@domain/entities/Post"
+import { Author } from "@domain/entities/Author"
+import { Category } from "@domain/entities/Category"
+import { Slug } from "@domain/value-objects/Slug"
+import type { PostRepository, PostFilters } from "@application/ports/PostRepository"
+import postsData from "@infrastructure/data/posts.json"
 
 export class PostRepositoryJSON implements PostRepository {
   private posts: Post[]
@@ -43,7 +43,7 @@ export class PostRepositoryJSON implements PostRepository {
         categories,
         tags: data.tags,
         publishedAt: new Date(data.publishedAt),
-        updatedAt: data.updatedAt ? new Date(data.updatedAt) : undefined,
+        updatedAt: undefined,
         readingTimeMinutes: data.readingTimeMinutes,
         featured: data.featured,
       })

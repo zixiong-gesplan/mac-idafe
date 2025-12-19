@@ -1,6 +1,6 @@
-import type { NewsRepository, NewsFilters } from "../../application/ports/NewsRepository"
-import { News } from "../../domain/entities/News"
-import newsData from "../data/news.json"
+import type { NewsRepository, NewsFilters } from "@application/ports/NewsRepository"
+import { News } from "@domain/entities/News"
+import newsData from "@infrastructure/data/news.json"
 
 export class NewsRepositoryJSON implements NewsRepository {
   private news: News[]

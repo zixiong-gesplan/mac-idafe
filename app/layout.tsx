@@ -4,10 +4,11 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import "./animations.css"
-import { Navbar } from "@/ui/components/Navbar"
-import { Footer } from "@/ui/components/Footer"
-import { GSAPProvider } from "@/ui/components/GSAPProvider"
-import { CustomCursor } from "@/ui/components/CustomCursor"
+import { GSAPProvider } from "./src/ui/components/GSAPProvider"
+import { CustomCursor } from "./src/ui/components/CustomCursor"
+import { Navbar } from "./src/ui/components/Navbar"
+import { Footer } from "./src/ui/components/Footer"
+
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })

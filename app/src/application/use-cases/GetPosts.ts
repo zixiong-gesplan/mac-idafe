@@ -1,5 +1,5 @@
-import type { Post } from "../../domain/entities/Post"
-import type { PostRepository, PostFilters } from "../ports/PostRepository"
+import type { Post } from "@domain/entities/Post"
+import type { PostRepository, PostFilters } from "@application/ports/PostRepository"
 
 export class GetPosts {
   constructor(private postRepository: PostRepository) {}

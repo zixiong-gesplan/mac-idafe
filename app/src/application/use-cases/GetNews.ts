@@ -1,5 +1,5 @@
-import type { NewsRepository, NewsFilters } from "../ports/NewsRepository"
-import type { News } from "../../domain/entities/News"
+import type { NewsRepository, NewsFilters } from "@application/ports/NewsRepository"
+import type { News } from "@domain/entities/News"
 
 export class GetNews {
   constructor(private repository: NewsRepository) {}

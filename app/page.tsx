@@ -1,13 +1,14 @@
-import { PostRepositoryJSON } from "@/infrastructure/repositories/PostRepositoryJSON"
-import { GetPosts } from "@/application/use-cases/GetPosts"
-import { PostAdapter } from "@/ui/adapters/PostAdapter"
-import { PartnersSection } from "@/ui/components/PartnersSection"
-import { HeroSection } from "@/ui/components/HeroSection"
-import { StatsSection } from "@/ui/components/StatsSection"
-import { FeaturedPostsSection } from "@/ui/components/FeaturedPostsSection"
-import { CategoriesSection } from "@/ui/components/CategoriesSection"
-import { RecentPostsSection } from "@/ui/components/RecentPostsSection"
-import { ScrollProgressSections } from "@/ui/components/ScrollProgressSections"
+import { GetPosts } from "./src/application/use-cases/GetPosts"
+import { PostRepositoryJSON } from "./src/infrastructure/repositories/PostRepositoryJSON"
+import { PostAdapter } from "./src/ui/adapters/PostAdapter"
+import { CategoriesSection } from "./src/ui/components/CategoriesSection"
+import { FeaturedPostsSection } from "./src/ui/components/FeaturedPostsSection"
+import { HeroSection } from "./src/ui/components/HeroSection"
+import { PartnersSection } from "./src/ui/components/PartnersSection"
+import { RecentPostsSection } from "./src/ui/components/RecentPostsSection"
+import { ScrollProgressSections } from "./src/ui/components/ScrollProgressSections"
+import { StatsSection } from "./src/ui/components/StatsSection"
+
 
 export const metadata = {
   title: "EcoBlog - Educación Ambiental para un Futuro Sostenible",

@@ -1,13 +1,13 @@
-import { TextReveal } from "@/ui/components/TextReveal"
-import { GradientText } from "@/ui/components/GradientText"
-import { MagneticButton } from "@/ui/components/MagneticButton"
-import { AnimatedCounter } from "@/ui/components/AnimatedCounter"
-import { ScrollStorySection } from "@/ui/components/ScrollStorySection"
-import { AnimatedSection } from "@/ui/components/AnimatedSection"
-import { TeamMemberCard } from "@/ui/components/TeamMemberCard"
-import { TimelineEvent } from "@/ui/components/TimelineEvent"
-import { ValueCard } from "@/ui/components/ValueCard"
-import { ParallaxImage } from "@/ui/components/ParallaxImage"
+import { TextReveal } from "@ui/components/TextReveal"
+import { GradientText } from "@ui/components/GradientText"
+import { MagneticButton } from "@ui/components/MagneticButton"
+import { AnimatedCounter } from "@ui/components/AnimatedCounter"
+import { ScrollStorySection } from "@ui/components/ScrollStorySection"
+import { AnimatedSection } from "@ui/components/AnimatedSection"
+import { TeamMemberCard } from "@ui/components/TeamMemberCard"
+import { TimelineEvent } from "@ui/components/TimelineEvent"
+import { ValueCard } from "@ui/components/ValueCard"
+import { ParallaxImage } from "@ui/components/ParallaxImage"
 
 export const metadata = {
   title: "Sobre Nosotros - EcoBlog",

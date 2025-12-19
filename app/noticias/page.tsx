@@ -1,14 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { NewsHero } from "@/ui/components/NewsHero"
-import { BreakingNewsTicker } from "@/ui/components/BreakingNewsTicker"
-import { NewsGrid } from "@/ui/components/NewsGrid"
-import { NewsSearchBar } from "@/ui/components/NewsSearchBar"
-import { NewsCategoryFilter } from "@/ui/components/NewsCategoryFilter"
-import { NewsSidebar } from "@/ui/components/NewsSidebar"
-import { NewsRepositoryJSON } from "@/infrastructure/repositories/NewsRepositoryJSON"
-import { GetNews } from "@/application/use-cases/GetNews"
+import { NewsRepositoryJSON } from "@infrastructure/repositories/NewsRepositoryJSON"
+import { GetNews } from "@application/use-cases/GetNews"
+import { BreakingNewsTicker } from "@ui/components/BreakingNewsTicker"
+import { NewsHero } from "@ui/components/NewsHero"
+import { NewsSearchBar } from "@ui/components/NewsSearchBar"
+import { NewsCategoryFilter } from "@ui/components/NewsCategoryFilter"
+import { NewsGrid } from "@ui/components/NewsGrid"
+import { NewsSidebar } from "@ui/components/NewsSidebar"
+
 
 // Initialize use case with repository
 const newsRepository = new NewsRepositoryJSON()

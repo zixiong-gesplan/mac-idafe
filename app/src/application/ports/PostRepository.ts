@@ -1,4 +1,4 @@
-import type { Post } from "@/domain/entities/Post"
+import type { Post } from "@domain/entities/Post"
 
 export interface PostFilters {
   category?: string

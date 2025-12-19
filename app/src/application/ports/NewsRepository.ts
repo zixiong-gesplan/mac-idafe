@@ -1,4 +1,4 @@
-import type { News } from "../../domain/entities/News"
+import type { News } from "@domain/entities/News"
 
 export interface NewsFilters {
   category?: string

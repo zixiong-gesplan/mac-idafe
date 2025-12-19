@@ -1,5 +1,5 @@
-import type { Post } from "../../domain/entities/Post"
-import type { Category } from "../../domain/entities/Category"
+import type { Post } from "@domain/entities/Post"
+import type { Category } from "@domain/entities/Category"
 
 export interface PostDTO {
   id: string

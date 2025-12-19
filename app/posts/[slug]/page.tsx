@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { PostRepositoryJSON } from "@/infrastructure/repositories/PostRepositoryJSON"
-import { GetPostBySlug } from "@/application/use-cases/GetPostBySlug"
-import { PostAdapter } from "@/ui/adapters/PostAdapter"
-import { ReadingProgress } from "@/ui/components/ReadingProgress"
+import { PostRepositoryJSON } from "@infrastructure/repositories/PostRepositoryJSON"
+import { GetPostBySlug } from "@application/use-cases/GetPostBySlug"
+import { PostAdapter } from "@ui/adapters/PostAdapter"
+import { ReadingProgress } from "@ui/components/ReadingProgress"
 
 interface PostPageProps {
   params: Promise<{
