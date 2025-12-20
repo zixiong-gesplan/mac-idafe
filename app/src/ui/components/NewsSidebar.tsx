@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { NewsCard } from "./NewsCard"
 import { MagneticButton } from "./atoms/MagneticButton"
+import { NewsCard } from "./molecules"
 
 gsap.registerPlugin(ScrollTrigger)
 

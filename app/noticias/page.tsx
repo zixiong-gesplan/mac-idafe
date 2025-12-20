@@ -6,11 +6,10 @@ import { GetNews } from "@application/use-cases/GetNews"
 import type { News as NewsEntity } from "@domain/entities/News"
 import { BreakingNewsTicker } from "@ui/components/BreakingNewsTicker"
 import { NewsHero } from "@ui/components/NewsHero"
-import { NewsSearchBar } from "@ui/components/NewsSearchBar"
-import { NewsCategoryFilter } from "@ui/components/NewsCategoryFilter"
 import { NewsGrid } from "@ui/components/NewsGrid"
 import { NewsSidebar } from "@ui/components/NewsSidebar"
-import { Boundary } from "@/app/src/ui/components/atoms/Boundary"
+import { Boundary } from "@/app/src/ui/components/utils/Boundary"
+import { NewsCategoryFilter, NewsSearchBar } from "@ui/components/molecules"
 
 
 // Initialize use case with repository

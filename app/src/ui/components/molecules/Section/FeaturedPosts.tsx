@@ -1,9 +1,9 @@
 "use client"
 
-import { PostCard } from "../../PostCard"
 import { AnimatedSection } from "./Animated"
-import { AnimatedText } from "../Text/Animated"
 import type { PostDTO } from "../../../adapters/PostAdapter"
+import { AnimatedText } from "../../atoms"
+import { PostCard } from "../PostCard"
 
 interface FeaturedPostsSectionProps {
   posts: PostDTO[]

@@ -2,7 +2,7 @@ import React from "react"
 import { renderToString } from "react-dom/server"
 import { describe, expect, it } from "vitest"
 
-import { Boundary } from "@ui/components/atoms/Boundary"
+import { Boundary } from "@/app/src/ui/components/utils/Boundary"
 import { deriveCategories, deriveFilteredNews, derivePopularTags } from "@/app/noticias/page"
 
 const sampleNews = [

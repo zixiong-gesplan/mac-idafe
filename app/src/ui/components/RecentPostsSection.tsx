@@ -1,8 +1,8 @@
 "use client"
 
-import { PostCard } from "./PostCard"
 import { AnimatedSection } from "./molecules/Section/Animated"
 import type { PostDTO } from "../adapters/PostAdapter"
+import { PostCard } from "./molecules"
 
 interface RecentPostsSectionProps {
   posts: PostDTO[]

@@ -4,10 +4,8 @@ import { MagneticButton } from "@/app/src/ui/components/atoms/MagneticButton"
 import { Counter } from "@/app/src/ui/components/atoms/Counter"
 import { ScrollStorySection } from "@ui/components/ScrollStorySection"
 import { AnimatedSection } from "@/app/src/ui/components/molecules/Section/Animated"
-import { TeamMemberCard } from "@ui/components/TeamMemberCard"
-import { TimelineEvent } from "@ui/components/TimelineEvent"
-import { ValueCard } from "@ui/components/ValueCard"
-import { ParallaxImage } from "@ui/components/ParallaxImage"
+import { ParallaxImage, TeamMemberCard, TimelineEvent, ValueCard } from "@ui/components/molecules"
+
 
 export const metadata = {
   title: "Sobre Nosotros - MAC-IDAFE",
