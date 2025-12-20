@@ -1,9 +1,5 @@
-﻿"use client"
-import React from "react"
-import { useState, useEffect } from "react"
-import { NewsRepositoryJSON } from "@infrastructure/repositories/NewsRepositoryJSON"
-import { GetNews } from "@application/use-cases/GetNews"
-import type { News as NewsEntity } from "@domain/entities/News"
+"use client"
+import React, { useEffect, useState } from "react"
 import { BreakingNewsTicker } from "@ui/components/BreakingNewsTicker"
 import { NewsHero } from "@ui/components/NewsHero"
 import { NewsGrid } from "@ui/components/NewsGrid"
@@ -11,12 +7,28 @@ import { NewsSidebar } from "@ui/components/NewsSidebar"
 import { Boundary } from "@/app/src/ui/components/utils/Boundary"
 import { NewsCategoryFilter, NewsSearchBar } from "@ui/components/molecules"
 
-
-// Initialize use case with repository
-const newsRepository = new NewsRepositoryJSON()
-const getNews = new GetNews(newsRepository)
-
-type NewsView = ReturnType<NewsEntity["toJSON"]>
+type NewsView = {
+  id: string
+  title: string
+  slug: string
+  excerpt: string
+  content: string
+  author: {
+    id: string
+    name: string
+    bio: string
+    avatar?: string
+    email: string
+  }
+  category: string
+  categorySlug: string
+  categoryColor: string
+  tags: string[]
+  publishedAt: string
+  readingTimeMinutes: number
+  featured: boolean
+  breaking: boolean
+}
 
 type CategorySummary = {
   name: string
@@ -30,7 +42,6 @@ type FilterParams = {
   searchQuery: string
 }
 
-// Pure helpers keep filtering logic testable and separate from render concerns.
 export function deriveFilteredNews(allNews: NewsView[], filters: FilterParams): NewsView[] {
   const { categorySlug, searchQuery } = filters
   let result = [...allNews]
@@ -88,13 +99,14 @@ export default function NoticiasPage() {
       try {
         setLoading(true)
         setError(null)
-        const news = await getNews.execute()
-        const newsData = news.map((n) => n.toJSON())
-        setAllNews(newsData)
-        setFilteredNews(newsData)
-
-        const breaking = await getNews.getBreaking()
-        setBreakingNews(breaking.map((n) => n.toJSON()))
+        const response = await fetch("/api/news", { cache: "no-store" })
+        if (!response.ok) {
+          throw new Error("No pudimos cargar las noticias")
+        }
+        const data: NewsView[] = await response.json()
+        setAllNews(data)
+        setFilteredNews(data)
+        setBreakingNews(data.filter((n) => n.breaking))
       } catch (err) {
         setError("No pudimos cargar las noticias. Intenta de nuevo.")
         setAllNews([])
@@ -111,23 +123,16 @@ export default function NoticiasPage() {
     setFilteredNews(deriveFilteredNews(allNews, { categorySlug: activeCategory, searchQuery }))
   }, [activeCategory, searchQuery, allNews])
 
-  // Extract unique categories with counts
   const categories = deriveCategories(allNews)
-
-  // Extract popular tags
   const popularTags = derivePopularTags(allNews)
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Breaking News Ticker */}
       {breakingNews.length > 0 && <BreakingNewsTicker news={breakingNews} />}
 
-      {/* Hero Section */}
       <NewsHero />
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 pb-20">
-        {/* Search and Filters */}
         <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between mb-8">
           <NewsSearchBar onSearch={setSearchQuery} placeholder="Buscar por tema, titulo o etiqueta..." />
           <div className="w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0">
@@ -139,11 +144,7 @@ export default function NoticiasPage() {
           </div>
         </div>
 
-        {/* Results count */}
-        <Boundary
-          when={!!activeCategory || !!searchQuery}
-          fallback={<div className="mb-6">&nbsp;</div>}
-        >
+        <Boundary when={!!activeCategory || !!searchQuery} fallback={<div className="mb-6">&nbsp;</div>}>
           <div className="mb-6 text-sm text-muted-foreground">
             {filteredNews.length} {filteredNews.length === 1 ? "resultado" : "resultados"}
             {activeCategory && ` en "${categories.find((c) => c.slug === activeCategory)?.name}"`}
@@ -151,18 +152,16 @@ export default function NoticiasPage() {
           </div>
         </Boundary>
 
-        {/* Main Grid + Sidebar */}
         <div className="grid lg:grid-cols-[1fr_320px] gap-8">
-          {/* News Grid */}
           <Boundary
             when={!loading}
             fallback={
               <div className="text-center py-20" role="status" aria-live="polite">
                 <div className="text-6xl mb-4" aria-hidden="true">
-                  ⏳
+                  ?
                 </div>
                 <h3 className="text-xl font-bold mb-2">Cargando noticias</h3>
-                <p className="text-muted-foreground">Espera un momento mientras obtenemos las últimas novedades.</p>
+                <p className="text-muted-foreground">Espera un momento mientras obtenemos las Łltimas novedades.</p>
               </div>
             }
           >
@@ -171,7 +170,7 @@ export default function NoticiasPage() {
               fallback={
                 <div className="text-center py-20" role="alert" aria-live="assertive">
                   <div className="text-6xl mb-4" aria-hidden="true">
-                    ⚠️
+                    ??
                   </div>
                   <h3 className="text-xl font-bold mb-2">No se pudieron cargar las noticias</h3>
                   <p className="text-muted-foreground">{error}</p>
@@ -183,7 +182,7 @@ export default function NoticiasPage() {
                 fallback={
                   <div className="text-center py-20">
                     <div className="text-6xl mb-4" aria-hidden="true">
-                      🔍
+                      ??
                     </div>
                     <h3 className="text-xl font-bold mb-2">No se encontraron noticias</h3>
                     <p className="text-muted-foreground">Intenta con otros terminos de busqueda o categorias.</p>
@@ -195,7 +194,6 @@ export default function NoticiasPage() {
             </Boundary>
           </Boundary>
 
-          {/* Sidebar */}
           <NewsSidebar recentNews={allNews.slice(0, 5)} popularTags={popularTags} />
         </div>
       </div>

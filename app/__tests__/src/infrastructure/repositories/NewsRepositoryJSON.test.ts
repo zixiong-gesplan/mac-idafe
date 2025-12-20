@@ -1,4 +1,7 @@
-import { describe, it, expect } from "vitest"
+import { describe, it, expect, beforeEach, afterEach } from "vitest"
+import { tmpdir } from "os"
+import path from "path"
+import { mkdtempSync, rmSync, writeFileSync, readFileSync } from "fs"
 import { NewsRepositoryJSON } from "@/app/src/infrastructure/repositories/NewsRepositoryJSON"
 import { News } from "@/app/src/domain/entities/News"
 
@@ -9,61 +12,98 @@ const baseAuthor = {
   email: "reporter@example.com",
 }
 
-const createNews = (id: string, publishedAt: Date): News =>
+const newsRecord = (id: string, publishedAt: Date) => ({
+  id,
+  title: `News ${id}`,
+  slug: `news-${id}`,
+  excerpt: `Excerpt for news ${id} with enough detail`,
+  content: `Content for news ${id}`,
+  author: baseAuthor,
+  category: "Tech",
+  categorySlug: "tech",
+  categoryColor: "#000000",
+  tags: ["tech"],
+  publishedAt: publishedAt.toISOString(),
+  readingTimeMinutes: 4,
+  featured: false,
+  breaking: false,
+})
+
+const toEntity = (record: ReturnType<typeof newsRecord>): News =>
   News.create({
-    id,
-    title: `News ${id}`,
-    slug: `news-${id}`,
-    excerpt: `Excerpt for news ${id} with enough detail`,
-    content: `Content for news ${id}`,
-    author: baseAuthor,
-    category: "Tech",
-    categorySlug: "tech",
-    categoryColor: "#000000",
-    tags: ["tech"],
-    publishedAt,
-    readingTimeMinutes: 4,
-    featured: false,
-    breaking: false,
+    ...record,
+    publishedAt: new Date(record.publishedAt),
   })
 
 describe("NewsRepositoryJSON", () => {
-  it("sorts recent news without mutating the source collection", async () => {
-    const repository = new NewsRepositoryJSON()
-    const newest = createNews("3", new Date("2024-03-03T00:00:00Z"))
-    const middle = createNews("2", new Date("2024-02-02T00:00:00Z"))
-    const oldest = createNews("1", new Date("2024-01-01T00:00:00Z"))
+  let tempDir: string
+  let dataFile: string
 
-    ;(repository as any).news = [middle, newest, oldest]
-    const originalOrder = ((repository as any).news as News[]).map((n) => n.id)
+  const setupRepository = (records: ReturnType<typeof newsRecord>[]) => {
+    writeFileSync(dataFile, JSON.stringify(records, null, 2))
+    return new NewsRepositoryJSON(dataFile)
+  }
+
+  beforeEach(() => {
+    tempDir = mkdtempSync(path.join(tmpdir(), "news-repo-"))
+    dataFile = path.join(tempDir, "news.json")
+  })
+
+  afterEach(() => {
+    rmSync(tempDir, { recursive: true, force: true })
+  })
+
+  it("sorts recent news without mutating the source collection", async () => {
+    const newest = newsRecord("3", new Date("2024-03-03T00:00:00Z"))
+    const middle = newsRecord("2", new Date("2024-02-02T00:00:00Z"))
+    const oldest = newsRecord("1", new Date("2024-01-01T00:00:00Z"))
+
+    const repository = setupRepository([middle, newest, oldest])
+    const originalOrder = [middle.id, newest.id, oldest.id]
 
     const result = await repository.findRecent(3)
 
     expect(result.map((n) => n.id)).toEqual(["3", "2", "1"])
-    expect(((repository as any).news as News[]).map((n) => n.id)).toEqual(originalOrder)
+    expect((repository as any).news.map((n: News) => n.id)).toEqual(originalOrder)
   })
 
-  it("returns an empty array when there are no news items", async () => {
-    const repository = new NewsRepositoryJSON()
-    ;(repository as any).news = []
+  it("creates and persists a new news item", async () => {
+    const base = newsRecord("1", new Date("2024-01-01T00:00:00Z"))
+    const repository = setupRepository([base])
+    const newEntity = toEntity(
+      newsRecord("2", new Date("2024-02-02T00:00:00Z")),
+    )
 
-    const result = await repository.findRecent(5)
+    const created = await repository.create(newEntity)
 
-    expect(result).toEqual([])
-    expect((repository as any).news).toEqual([])
+    expect(created.id).toBe("2")
+    const persisted = JSON.parse(readFileSync(dataFile, "utf-8")) as any[]
+    expect(persisted.find((n) => n.id === "2")).toBeDefined()
   })
 
-  it("keeps stable ordering for items with duplicate dates", async () => {
-    const repository = new NewsRepositoryJSON()
-    const duplicateDate = new Date("2024-01-15T00:00:00Z")
-    const firstDuplicate = createNews("1", duplicateDate)
-    const secondDuplicate = createNews("2", duplicateDate)
-    const newest = createNews("3", new Date("2024-02-01T00:00:00Z"))
+  it("updates an existing news item and saves changes", async () => {
+    const base = newsRecord("1", new Date("2024-01-01T00:00:00Z"))
+    const repository = setupRepository([base])
+    const updated = toEntity({
+      ...base,
+      title: "Updated title",
+    })
 
-    ;(repository as any).news = [firstDuplicate, secondDuplicate, newest]
+    const result = await repository.update(updated)
 
-    const result = await repository.findRecent(3)
+    expect(result.title).toBe("Updated title")
+    const persisted = JSON.parse(readFileSync(dataFile, "utf-8")) as any[]
+    expect(persisted.find((n) => n.id === "1")?.title).toBe("Updated title")
+  })
 
-    expect(result.map((n) => n.id)).toEqual(["3", "1", "2"])
+  it("deletes an existing news item and persists the removal", async () => {
+    const first = newsRecord("1", new Date("2024-01-01T00:00:00Z"))
+    const second = newsRecord("2", new Date("2024-02-02T00:00:00Z"))
+    const repository = setupRepository([first, second])
+
+    await repository.delete("1")
+
+    const persisted = JSON.parse(readFileSync(dataFile, "utf-8")) as any[]
+    expect(persisted.map((n) => n.id)).toEqual(["2"])
   })
 })

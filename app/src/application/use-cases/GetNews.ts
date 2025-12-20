@@ -20,6 +20,10 @@ export class GetNews {
     return this.repository.findRecent(limit)
   }
 
+  async getById(id: string): Promise<News | null> {
+    return this.repository.findById(id)
+  }
+
   async getBySlug(slug: string): Promise<News | null> {
     return this.repository.findBySlug(slug)
   }
