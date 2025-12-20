@@ -4,6 +4,7 @@ import { AnimatedSection } from "./Animated"
 import type { PostDTO } from "../../../adapters/PostAdapter"
 import { AnimatedText } from "../../atoms"
 import { PostCard } from "../PostCard"
+import { List } from "../../utils"
 
 interface FeaturedPostsSectionProps {
   posts: PostDTO[]
@@ -26,9 +27,10 @@ export function FeaturedPostsSection({ posts }: FeaturedPostsSectionProps) {
 
         <AnimatedSection animation="stagger" staggerDelay={0.15}>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
+            <List
+              data={posts}
+              Render={ ({item}) => <PostCard key={item.id} post={item} />}
+            />
           </div>
         </AnimatedSection>
       </div>
