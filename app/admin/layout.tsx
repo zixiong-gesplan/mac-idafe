@@ -1,42 +1,44 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import type { ReactNode } from "react"
 
-const STORAGE_KEY = "mac-idafe-admin-access"
-const ADMIN_CODE = process.env.NEXT_PUBLIC_ADMIN_CODE || ""
+const STORAGE_KEY = "mac-idafe-admin-auth"
+const FALLBACK_USER = "admin"
+const FALLBACK_PASSWORD = "admin123"
+const ADMIN_USER = process.env.NEXT_PUBLIC_ADMIN_USER || FALLBACK_USER
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || FALLBACK_PASSWORD
 
 function AdminGuard({ children }: { children: ReactNode }) {
-  const [authorized, setAuthorized] = useState<boolean>(!ADMIN_CODE)
-  const [input, setInput] = useState("")
+  const [authorized, setAuthorized] = useState(false)
+  const [user, setUser] = useState("")
+  const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
 
+  const authToken = useMemo(() => btoa(`${ADMIN_USER}:${ADMIN_PASSWORD}`), [])
+
   useEffect(() => {
-    if (!ADMIN_CODE) return
     const cached = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null
-    if (cached && cached === ADMIN_CODE) {
+    if (cached && cached === authToken) {
       setAuthorized(true)
     }
-  }, [])
+  }, [authToken])
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    if (!ADMIN_CODE) {
-      setAuthorized(true)
-      return
-    }
-    if (input.trim() === ADMIN_CODE) {
-      window.localStorage.setItem(STORAGE_KEY, ADMIN_CODE)
+    if (user === ADMIN_USER && password === ADMIN_PASSWORD) {
+      window.localStorage.setItem(STORAGE_KEY, authToken)
       setAuthorized(true)
       setError(null)
-    } else {
-      setError("Código inválido")
+      return
     }
+    setError("Usuario o contraseña incorrectos")
   }
 
   const handleLogout = () => {
     window.localStorage.removeItem(STORAGE_KEY)
     setAuthorized(false)
-    setInput("")
+    setUser("")
+    setPassword("")
   }
 
   if (authorized) {
@@ -49,15 +51,13 @@ function AdminGuard({ children }: { children: ReactNode }) {
               <h1 className="text-2xl font-bold text-foreground">Administración de noticias</h1>
               <p className="text-sm text-muted-foreground">Crear, editar y eliminar noticias en vivo.</p>
             </div>
-            {ADMIN_CODE && (
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="rounded-lg border border-border px-4 py-2 text-sm text-muted-foreground hover:bg-muted/60 transition"
-              >
-                Salir
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="rounded-lg border border-border px-4 py-2 text-sm text-muted-foreground hover:bg-muted/60 transition"
+            >
+              Salir
+            </button>
           </header>
           {children}
         </div>
@@ -66,22 +66,31 @@ function AdminGuard({ children }: { children: ReactNode }) {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center from-background to-muted/40">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/40">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm"
       >
         <div>
           <p className="text-sm font-semibold text-foreground">Acceso restringido</p>
-          <p className="text-sm text-muted-foreground">Introduce el código de acceso para continuar.</p>
+          <p className="text-sm text-muted-foreground">Introduce usuario y contraseña para continuar.</p>
         </div>
-        <input
-          type="password"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Código de acceso"
-          className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-        />
+        <div className="grid gap-3">
+          <input
+            type="text"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+            placeholder="Usuario"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Contraseña"
+            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+          />
+        </div>
         {error && <p className="text-sm text-destructive">{error}</p>}
         <button
           type="submit"
