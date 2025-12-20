@@ -68,7 +68,7 @@ export function HeroSection() {
   return (
     <section id="hero" ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Animated background */}
-      <div ref={bgRef} className="absolute inset-0 bg-gradient-to-b from-primary/10 via-primary/5 to-background" />
+      <div ref={bgRef} className="absolute inset-0 from-primary/10 via-primary/5 to-background" />
 
       {/* Decorative floating elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -81,7 +81,7 @@ export function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 py-16">
         <h1
           ref={titleRef}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
           style={{ perspective: "1000px" }}
         >
           {titlePart1.split("").map((char, i) => (
@@ -98,7 +98,6 @@ export function HeroSection() {
         </h1>
 
         <p
-          ref={subtitleRef}
           className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto text-pretty leading-relaxed"
         >
           Descubre contenido educativo sobre sostenibilidad, cambio climático, biodiversidad y buenas prácticas
@@ -109,10 +108,10 @@ export function HeroSection() {
           <MagneticButton strength={0.2}>
             <RippleEffect color="rgba(255,255,255,0.3)">
               <Link
-                href="/articulos"
+                href="/noticias"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium text-lg hover:shadow-lg hover:shadow-primary/20"
               >
-                Explorar artículos
+                Explora nuestra actualidad
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -124,7 +123,7 @@ export function HeroSection() {
               href="/sobre-nosotros"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-border text-foreground rounded-lg hover:bg-accent hover:border-accent transition-all duration-300 font-medium text-lg"
             >
-              Conoce más
+              Conoce sobre nosotros
             </Link>
           </MagneticButton>
         </div>

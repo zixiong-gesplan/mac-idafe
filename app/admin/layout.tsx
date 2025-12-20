@@ -41,7 +41,7 @@ function AdminGuard({ children }: { children: ReactNode }) {
 
   if (authorized) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/40">
+      <div className="min-h-screen from-background to-muted/40">
         <div className="mx-auto max-w-6xl px-4 py-10 space-y-8">
           <header className="flex items-center justify-between border-b border-border pb-6">
             <div>
@@ -66,7 +66,7 @@ function AdminGuard({ children }: { children: ReactNode }) {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/40">
+    <main className="min-h-screen flex items-center justify-center from-background to-muted/40">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm"

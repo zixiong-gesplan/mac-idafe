@@ -15,8 +15,12 @@
     "category": "Política Ambiental",
     "categorySlug": "politica-ambiental",
     "categoryColor": "#3b82f6",
-    "tags": ["COP29", "renovables", "acuerdo climático"],
-    "publishedAt": "2024-12-15T08:00:00Z",
+    "tags": [
+      "COP29",
+      "renovables",
+      "acuerdo climático"
+    ],
+    "publishedAt": "2024-12-15T08:00:00.000Z",
     "readingTimeMinutes": 4,
     "featured": true,
     "breaking": true
@@ -37,8 +41,12 @@
     "category": "Conservación",
     "categorySlug": "conservacion",
     "categoryColor": "#10b981",
-    "tags": ["amazonas", "deforestación", "brasil"],
-    "publishedAt": "2024-12-14T14:30:00Z",
+    "tags": [
+      "amazonas",
+      "deforestación",
+      "brasil"
+    ],
+    "publishedAt": "2024-12-14T14:30:00.000Z",
     "readingTimeMinutes": 5,
     "featured": true,
     "breaking": false
@@ -59,8 +67,12 @@
     "category": "Tecnología Verde",
     "categorySlug": "tecnologia-verde",
     "categoryColor": "#f59e0b",
-    "tags": ["tesla", "baterías", "energía solar"],
-    "publishedAt": "2024-12-13T10:00:00Z",
+    "tags": [
+      "tesla",
+      "baterías",
+      "energía solar"
+    ],
+    "publishedAt": "2024-12-13T10:00:00.000Z",
     "readingTimeMinutes": 3,
     "featured": false,
     "breaking": false
@@ -81,8 +93,12 @@
     "category": "Océanos",
     "categorySlug": "oceanos",
     "categoryColor": "#06b6d4",
-    "tags": ["océanos", "ONU", "conservación marina"],
-    "publishedAt": "2024-12-12T16:00:00Z",
+    "tags": [
+      "océanos",
+      "ONU",
+      "conservación marina"
+    ],
+    "publishedAt": "2024-12-12T16:00:00.000Z",
     "readingTimeMinutes": 4,
     "featured": true,
     "breaking": false
@@ -103,8 +119,12 @@
     "category": "Legislación",
     "categorySlug": "legislacion",
     "categoryColor": "#8b5cf6",
-    "tags": ["microplásticos", "europa", "cosméticos"],
-    "publishedAt": "2024-12-11T09:00:00Z",
+    "tags": [
+      "microplásticos",
+      "europa",
+      "cosméticos"
+    ],
+    "publishedAt": "2024-12-11T09:00:00.000Z",
     "readingTimeMinutes": 3,
     "featured": false,
     "breaking": false
@@ -125,8 +145,12 @@
     "category": "Ciencia",
     "categorySlug": "ciencia",
     "categoryColor": "#ec4899",
-    "tags": ["corales", "biodiversidad", "investigación"],
-    "publishedAt": "2024-12-10T11:30:00Z",
+    "tags": [
+      "corales",
+      "biodiversidad",
+      "investigación"
+    ],
+    "publishedAt": "2024-12-10T11:30:00.000Z",
     "readingTimeMinutes": 5,
     "featured": false,
     "breaking": false

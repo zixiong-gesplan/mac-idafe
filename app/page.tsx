@@ -11,7 +11,7 @@ import { StatsSection } from "@ui/components/molecules/Section/Stats"
 
 
 export const metadata = {
-  title: "MAC-IDAFE - Red Macaronesia de centros escolares par ala educación ambiental",
+  title: "MAC-IDAFE - Red de Escuelas por la Acción Climática de la Macaronesia",
   description:
     "Aprende sobre sostenibilidad, cambio climático, biodiversidad y prácticas ecológicas. Contenido educativo de calidad sobre medio ambiente.",
 }
