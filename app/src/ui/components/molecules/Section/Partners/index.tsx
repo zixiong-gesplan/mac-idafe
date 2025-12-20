@@ -5,6 +5,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { PartnerCard } from "../../PartnerCard"
 import { partners } from "./data"
+import { List } from "@ui/components/utils"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -95,11 +96,11 @@ export function PartnersSection() {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {partners.map((partner) => (
-            <PartnerCard key={partner.name} {...partner} />
-          ))}
-        </div>
+        <List 
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          data={partners}
+          Render={ ({item}) => <PartnerCard key={item.name} {...item} />}
+        />
 
         <div ref={ctaRef} className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">¿Quieres colaborar con nosotros?</p>

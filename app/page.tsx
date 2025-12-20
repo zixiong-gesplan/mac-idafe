@@ -1,13 +1,13 @@
-import { GetPosts } from "./src/application/use-cases/GetPosts"
-import { PostRepositoryJSON } from "./src/infrastructure/repositories/PostRepositoryJSON"
-import { PostAdapter } from "./src/ui/adapters/PostAdapter"
-import { CategoriesSection } from "./src/ui/components/molecules/Section/Categories"
-import { FeaturedPostsSection } from "./src/ui/components/molecules/Section/FeaturedPosts"
-import { HeroSection } from "./src/ui/components/molecules/Section/Hero"
-import { PartnersSection } from "./src/ui/components/molecules/Section/Partners"
-import { RecentPostsSection } from "./src/ui/components/RecentPostsSection"
-import { ScrollProgressSections } from "./src/ui/components/ScrollProgressSections"
-import { StatsSection } from "./src/ui/components/molecules/Section/Stats"
+import { GetPosts } from "@application/use-cases/GetPosts"
+import { PostRepositoryJSON } from "@infrastructure/repositories/PostRepositoryJSON"
+import { PostAdapter } from "@ui/adapters/PostAdapter"
+import { CategoriesSection } from "@ui/components/molecules/Section/Categories"
+import { FeaturedPostsSection } from "@ui/components/molecules/Section/FeaturedPosts"
+import { HeroSection } from "@ui/components/molecules/Section/Hero"
+import { PartnersSection } from "@ui/components/molecules/Section/Partners"
+import { RecentPostsSection } from "@ui/components/RecentPostsSection"
+import { ScrollProgressSections } from "@ui/components/ScrollProgressSections"
+import { StatsSection } from "@ui/components/molecules/Section/Stats"
 
 
 export const metadata = {

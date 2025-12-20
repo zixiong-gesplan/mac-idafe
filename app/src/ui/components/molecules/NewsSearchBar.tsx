@@ -4,6 +4,7 @@ import React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
+import { Boundary } from "../utils"
 
 interface NewsSearchBarProps {
   onSearch: (query: string) => void
@@ -71,7 +72,10 @@ export function NewsSearchBar({ onSearch, placeholder = "Buscar noticias..." }: 
           placeholder={placeholder}
           className="flex-1 px-4 py-3 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
         />
-        {query && (
+        <Boundary
+          when={query.length > 0}
+          fallback={null}
+        >
           <button
             type="button"
             onClick={() => {
@@ -90,7 +94,7 @@ export function NewsSearchBar({ onSearch, placeholder = "Buscar noticias..." }: 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-        )}
+        </Boundary>
       </div>
     </form>
   )

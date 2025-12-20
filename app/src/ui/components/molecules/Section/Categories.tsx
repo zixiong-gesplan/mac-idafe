@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { List } from "@ui/components/utils"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -15,6 +16,36 @@ const categories = [
   { name: "Energía Renovable", slug: "energia", icon: "⚡", color: "#f59e0b", count: 15 },
   { name: "Biodiversidad", slug: "biodiversidad", icon: "🦋", color: "#8b5cf6", count: 21 },
 ]
+
+
+const CategoryLink = ({
+  slug,
+  color,
+  icon,
+  name,
+  count
+}: {
+  slug: string,
+  color: string,
+  icon: string,
+  name: string,
+  count: number
+}) => (<Link
+          key={slug}
+          href={`/category/${slug}`}
+          className="group block p-6 rounded-xl border-2 bg-card transition-colors duration-300"
+          style={{ borderColor: color }}
+        >
+          <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
+            {icon}
+          </div>
+          <h3 className="text-xl font-semibold text-foreground mb-2">{name}</h3>
+          <p className="text-sm text-muted-foreground">{count} artículos</p>
+          <div
+            className="mt-4 h-1 rounded-full transition-all duration-500 group-hover:w-full w-0"
+            style={{ backgroundColor: color }}
+          />
+        </Link>)
 
 export function CategoriesSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -90,25 +121,12 @@ export function CategoriesSection() {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ perspective: "1000px" }}>
-          {categories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/category/${category.slug}`}
-              className="group block p-6 rounded-xl border-2 bg-card transition-colors duration-300"
-              style={{ borderColor: category.color }}
-            >
-              <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                {category.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">{category.name}</h3>
-              <p className="text-sm text-muted-foreground">{category.count} artículos</p>
-              <div
-                className="mt-4 h-1 rounded-full transition-all duration-500 group-hover:w-full w-0"
-                style={{ backgroundColor: category.color }}
-              />
-            </Link>
-          ))}
+        <div ref={cardsRef} className="" style={{ perspective: "1000px" }}>
+          <List
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            data={categories}
+            Render={ ({item}) => (<CategoryLink  {... item} /> )}
+          />
         </div>
       </div>
     </section>

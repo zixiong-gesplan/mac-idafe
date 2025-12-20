@@ -37,25 +37,25 @@ export function NewsGrid({ news, title, showFeatured = true }: NewsGridProps) {
     const ctx = gsap.context(() => {
       const cards = gridRef.current?.querySelectorAll(".news-card-item")
 
-      if (cards) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 50, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: gridRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
+      if (!cards) {return}
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
           },
-        )
-      }
+        },
+      )
+      
     }, gridRef)
 
     return () => ctx.revert()

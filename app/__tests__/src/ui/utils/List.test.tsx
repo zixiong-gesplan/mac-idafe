@@ -1,7 +1,7 @@
 import React from "react"
 import { renderToString } from "react-dom/server"
 import { describe, expect, it, vi } from "vitest"
-import { List } from "@ui/components/utils/List"
+import { List } from "@ui/components/utils"
 
 const Item = ({ item }: { item: { label: string }; index: number }) => <span>{item.label}</span>
 

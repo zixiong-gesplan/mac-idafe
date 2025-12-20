@@ -3,6 +3,7 @@ import React from "react"
 import Link from "next/link"
 import { useRef, useEffect } from "react"
 import { gsap } from "gsap"
+import { Boundary } from "../utils"
 
 interface NewsCardProps {
   news: {
@@ -87,11 +88,14 @@ export function NewsCard({ news, index = 0, variant = "default" }: NewsCardProps
         {/* Image placeholder */}
         <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
           <div className="absolute inset-0 opacity-20" style={{ backgroundColor: news.categoryColor }} />
-          {news.breaking && (
+          <Boundary
+            when={news.breaking}
+            fallback={null}
+          >
             <div className="absolute top-4 left-4 px-3 py-1 bg-destructive text-destructive-foreground text-xs font-bold rounded-full animate-pulse">
               ÚLTIMA HORA
             </div>
-          )}
+          </Boundary>
           <div className="absolute bottom-4 left-4">
             <span
               className="px-3 py-1 rounded-full text-xs font-medium text-white"

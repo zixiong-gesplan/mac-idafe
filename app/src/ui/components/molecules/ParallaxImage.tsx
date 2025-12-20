@@ -48,22 +48,21 @@ export function ParallaxImage({
       })
 
       // Zoom effect
-      if (zoomOnScroll) {
-        gsap.fromTo(
-          image,
-          { scale: 1.2 },
-          {
-            scale: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
+      if (!zoomOnScroll) {return}
+      gsap.fromTo(
+        image,
+        { scale: 1.2 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
           },
-        )
-      }
+        },
+      )
     }, container)
 
     return () => ctx.revert()

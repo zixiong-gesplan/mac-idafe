@@ -56,7 +56,6 @@ export function NewsCategoryFilter({ categories, activeCategory, onCategoryChang
       >
         Todas
       </button>
-
       {categories.map((category) => (
         <button
           key={category.slug}

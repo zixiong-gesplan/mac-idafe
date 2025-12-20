@@ -3,6 +3,7 @@
 import { AnimatedSection } from "./molecules/Section/Animated"
 import type { PostDTO } from "../adapters/PostAdapter"
 import { PostCard } from "./molecules"
+import { List } from "./utils"
 
 interface RecentPostsSectionProps {
   posts: PostDTO[]
@@ -20,11 +21,11 @@ export function RecentPostsSection({ posts }: RecentPostsSectionProps) {
         </AnimatedSection>
 
         <AnimatedSection animation="stagger" staggerDelay={0.12}>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
-          </div>
+            <List
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+              data={posts}
+              Render={ ({item}) => <PostCard key={item.id} post={item} />}
+            />
         </AnimatedSection>
       </div>
     </section>

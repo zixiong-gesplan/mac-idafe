@@ -1,5 +1,4 @@
-﻿export * from "../utils/Boundary"
-export * from "./DarkModeToggle"
+﻿export * from "./DarkModeToggle"
 export * from "./MagneticButton"
 export * from "./RippleEffect"
 export * from "./Text"
