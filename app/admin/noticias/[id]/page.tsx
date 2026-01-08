@@ -78,7 +78,7 @@ export default function EditNewsPage() {
             Volver al listado
           </button>
         </div>
-
+        
         {loading ? (
           <p className="mt-4 text-sm text-muted-foreground">Cargando noticia...</p>
         ) : news ? (

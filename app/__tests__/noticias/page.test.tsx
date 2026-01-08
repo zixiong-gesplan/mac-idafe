@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server"
 import { describe, expect, it } from "vitest"
 
 import { Boundary } from "@/app/src/ui/components/utils/Boundary"
-import { deriveCategories, deriveFilteredNews, derivePopularTags } from "@/app/noticias/page"
+import { deriveCategories, deriveFilteredNews, derivePopularTags } from "@/app/noticias/news-utils"
 
 const sampleNews = [
   {

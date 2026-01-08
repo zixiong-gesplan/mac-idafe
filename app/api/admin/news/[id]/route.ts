@@ -16,6 +16,7 @@ type Params = {
 }
 
 export async function GET(_request: Request, { params }: { params: Promise<Params["params"]> }) {
+  const noStore = { headers: { "Cache-Control": "no-store" } }
   const { id } = await params
   const repository = new NewsRepositoryJSON()
   const getNews = new GetNews(repository)
@@ -23,16 +24,17 @@ export async function GET(_request: Request, { params }: { params: Promise<Param
   try {
     const news = (await getNews.getById(id)) ?? (await getNews.getBySlug(id))
     if (!news) {
-      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404 })
+      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404, ...noStore })
     }
-    return NextResponse.json(news.toJSON())
+    return NextResponse.json(news.toJSON(), noStore)
   } catch (error) {
     const message = error instanceof Error ? error.message : "No se pudo obtener la noticia"
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, ...noStore })
   }
 }
 
 export async function PUT(request: Request, { params }: { params: Promise<Params["params"]> }) {
+  const noStore = { headers: { "Cache-Control": "no-store" } }
   try {
     const { id } = await params
     const body = await request.json()
@@ -42,25 +44,26 @@ export async function PUT(request: Request, { params }: { params: Promise<Params
     const existing = (await getNews.getById(id)) ?? (await getNews.getBySlug(id))
 
     if (!existing) {
-      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404 })
+      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404, ...noStore })
     }
 
     const payload = newsPayloadSchema.parse({ ...body, id: existing.id })
     const updateNews = new UpdateNews(repository)
 
     const updated = await updateNews.execute(payload)
-    return NextResponse.json(updated.toJSON())
+    return NextResponse.json(updated.toJSON(), noStore)
   } catch (error) {
     if (error instanceof ZodError) {
-      return NextResponse.json({ errors: error.flatten().fieldErrors }, { status: 400 })
+      return NextResponse.json({ errors: error.flatten().fieldErrors }, { status: 400, ...noStore })
     }
 
     const message = error instanceof Error ? error.message : "No se pudo actualizar la noticia"
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, ...noStore })
   }
 }
 
 export async function DELETE(_request: Request, { params }: { params: Promise<Params["params"]> }) {
+  const noStore = { headers: { "Cache-Control": "no-store" } }
   try {
     const { id } = await params
     const repository = new NewsRepositoryJSON()
@@ -68,14 +71,14 @@ export async function DELETE(_request: Request, { params }: { params: Promise<Pa
     const existing = (await getNews.getById(id)) ?? (await getNews.getBySlug(id))
 
     if (!existing) {
-      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404 })
+      return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404, ...noStore })
     }
 
     const deleteNews = new DeleteNews(repository)
     await deleteNews.execute(existing.id)
-    return NextResponse.json({ ok: true })
+    return NextResponse.json({ ok: true }, noStore)
   } catch (error) {
     const message = error instanceof Error ? error.message : "No se pudo eliminar la noticia"
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, ...noStore })
   }
 }

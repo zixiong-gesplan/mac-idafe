@@ -1,3 +1,4 @@
+import { randomUUID } from "crypto"
 import { z } from "zod"
 
 export const newsPayloadSchema = z.object({
@@ -7,7 +8,11 @@ export const newsPayloadSchema = z.object({
   excerpt: z.string().min(20, "El extracto debe tener al menos 20 caracteres"),
   content: z.string().min(20, "El contenido debe tener al menos 20 caracteres"),
   author: z.object({
-    id: z.string().min(1, "El autor debe tener un id"),
+    id: z
+      .string()
+      .min(1, "El autor debe tener un id")
+      .optional()
+      .default(() => randomUUID()),
     name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
     bio: z.string().min(10, "La bio debe tener al menos 10 caracteres"),
     avatar: z.string().url().optional().or(z.literal("").transform(() => undefined)),

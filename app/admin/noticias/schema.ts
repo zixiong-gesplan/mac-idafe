@@ -78,24 +78,26 @@ export const toNewsPayload = (values: NewsFormValues, existing?: NewsDTO) => {
       .map((tag) => tag.trim())
       .filter(Boolean) ?? []
 
+  const authorId = values.authorId?.trim() || existing?.author.id
+
   return {
     id: values.id ?? existing?.id,
     title: values.title,
-    slug: values.slug || undefined,
+    slug: values.slug?.trim() || existing?.slug,
     excerpt: values.excerpt,
     content: values.content,
     author: {
-      id: values.authorId || existing?.author.id || crypto.randomUUID(),
+      id: authorId,
       name: values.authorName,
       bio: values.authorBio,
-      avatar: values.authorAvatar || undefined,
+      avatar: values.authorAvatar?.trim() || existing?.author.avatar,
       email: values.authorEmail,
     },
     category: values.category,
-    categorySlug: values.categorySlug || undefined,
+    categorySlug: values.categorySlug?.trim() || existing?.categorySlug,
     categoryColor: values.categoryColor,
     tags,
-    publishedAt: new Date(values.publishedAt),
+    publishedAt: new Date(values.publishedAt).toISOString(),
     readingTimeMinutes: Number(values.readingTimeMinutes),
     featured: values.featured,
     breaking: values.breaking,

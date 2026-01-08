@@ -10,6 +10,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 export async function GET(request: Request) {
+  const noStore = { headers: { "Cache-Control": "no-store" } }
   const url = new URL(request.url)
   const filters: NewsFilters = {}
 
@@ -28,14 +29,16 @@ export async function GET(request: Request) {
 
   try {
     const news = await getNews.execute(filters)
-    return NextResponse.json(news.map((n) => n.toJSON()))
+    return NextResponse.json(news.map((n) => n.toJSON()), noStore)
   } catch (error) {
     const message = error instanceof Error ? error.message : "No se pudieron cargar las noticias"
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, ...noStore })
   }
 }
 
 export async function POST(request: Request) {
+  const noStore = { headers: { "Cache-Control": "no-store" } }
+
   try {
     const body = await request.json()
     const payload = newsPayloadSchema.parse(body)
@@ -44,13 +47,13 @@ export async function POST(request: Request) {
     const createNews = new CreateNews(repository)
 
     const created = await createNews.execute(payload)
-    return NextResponse.json(created.toJSON(), { status: 201 })
+    return NextResponse.json(created.toJSON(), { status: 201, ...noStore })
   } catch (error) {
     if (error instanceof ZodError) {
-      return NextResponse.json({ errors: error.flatten().fieldErrors }, { status: 400 })
+      return NextResponse.json({ errors: error.flatten().fieldErrors }, { status: 400, ...noStore })
     }
 
     const message = error instanceof Error ? error.message : "No se pudo crear la noticia"
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, ...noStore })
   }
 }
