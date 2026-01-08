@@ -3,7 +3,10 @@ import { PostRepositoryJSON } from "@infrastructure/repositories/PostRepositoryJ
 import { PostAdapter } from "@ui/adapters/PostAdapter"
 import { CategoriesSection } from "@ui/components/molecules/Section/Categories"
 import { FeaturedPostsSection } from "@ui/components/molecules/Section/FeaturedPosts"
-import { HeroSection } from "@ui/components/molecules/Section/Hero"
+import { BenefitsSection } from "@ui/components/landing/BenefitsSection"
+import { HeroSection } from "@ui/components/landing/HeroSection"
+import { TestimonialsSection } from "@ui/components/landing/TestimonialsSection"
+import { ActivitiesSection } from "@ui/components/landing/ActivitiesSection"
 import { PartnersSection } from "@ui/components/molecules/Section/Partners"
 import { RecentPostsSection } from "@ui/components/RecentPostsSection"
 import { ScrollProgressSections } from "@ui/components/ScrollProgressSections"
@@ -44,6 +47,9 @@ export default async function HomePage() {
       <ScrollProgressSections sections={sections} />
 
       <HeroSection />
+      <BenefitsSection />
+      <TestimonialsSection />
+      <ActivitiesSection />
       <section id="stats">
         <StatsSection />
       </section>

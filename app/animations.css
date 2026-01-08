@@ -18,6 +18,53 @@
   }
 }
 
+@keyframes doodle-draw {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wave-drift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(14px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes vanish-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+    filter: blur(2px);
+  }
+}
+
+@keyframes vanish-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(1.01);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 /* Clases utilitarias para fade-in animations */
 .animate-fade-in-up {
   animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -25,6 +72,24 @@
 
 .animate-fade-in {
   animation: fade-in 0.4s ease-out both;
+}
+
+.animate-doodle-draw {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: doodle-draw 2.4s ease-out forwards;
+}
+
+.animate-wave-drift {
+  animation: wave-drift 8s ease-in-out infinite;
+}
+
+.animate-vanish-out {
+  animation: vanish-out 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-vanish-in {
+  animation: vanish-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Stagger delays para elementos de lista */

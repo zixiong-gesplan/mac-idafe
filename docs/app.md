@@ -2190,7 +2190,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <ReadingProgress />
 
       {/* Navigation */}
-      <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-10">
+      <nav className="border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <Link
             href="/"
@@ -2484,7 +2484,7 @@ export default function AboutPage() {
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <ParallaxImage src="/aerial-view-green-forest-with-river-sustainable-na.jpg" alt="Bosque verde vista aérea" className="w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -2554,7 +2554,7 @@ export default function AboutPage() {
               <ParallaxImage
                 src="/team-planting-trees-environmental-volunteers.jpg"
                 alt="Equipo plantando árboles"
-                className="rounded-2xl overflow-hidden aspect-[4/3]"
+                className="rounded-2xl overflow-hidden aspect-4/3"
               />
             </div>
           </div>
@@ -4371,7 +4371,7 @@ export function BreakingNewsTicker({ news }: BreakingNewsTickerProps) {
   return (
     <div ref={tickerRef} className="relative overflow-hidden bg-destructive text-destructive-foreground py-2">
       <div className="flex items-center">
-        <div className="flex-shrink-0 px-4 font-bold text-sm flex items-center gap-2 border-r border-destructive-foreground/30 bg-destructive h-full">
+        <div className="shrink-0 px-4 font-bold text-sm flex items-center gap-2 border-r border-destructive-foreground/30 bg-destructive h-full">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -4779,11 +4779,11 @@ export function NewsCard({ news, index = 0, variant = "default" }: NewsCardProps
     return (
       <article
         ref={cardRef}
-        className="group relative overflow-hidden rounded-2xl bg-card border border-border h-full min-h-[400px] flex flex-col"
+        className="group relative overflow-hidden rounded-2xl bg-card border border-border h-full min-h-100 flex flex-col"
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Image placeholder */}
-        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
+        <div className="relative h-48 overflow-hidden bg-linear-to-br from-primary/20 to-accent/20">
           <div className="absolute inset-0 opacity-20" style={{ backgroundColor: news.categoryColor }} />
           <Boundary
             when={news.breaking}
@@ -4833,7 +4833,7 @@ export function NewsCard({ news, index = 0, variant = "default" }: NewsCardProps
   if (variant === "compact") {
     return (
       <article className="group flex gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
-        <div className="w-2 h-full rounded-full flex-shrink-0" style={{ backgroundColor: news.categoryColor }} />
+        <div className="w-2 h-full rounded-full shrink-0" style={{ backgroundColor: news.categoryColor }} />
         <div className="flex-1 min-w-0">
           <Link href={`/noticias/${news.slug}`}>
             <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 text-sm">
@@ -5601,7 +5601,7 @@ export function HeroSection() {
   return (
     <section id="hero" ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Animated background */}
-      <div ref={bgRef} className="absolute inset-0 bg-gradient-to-b from-primary/10 via-primary/5 to-background" />
+      <div ref={bgRef} className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/5 to-background" />
 
       {/* Decorative floating elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -6011,7 +6011,7 @@ export function TeamMemberCard({ member, index }: TeamMemberCardProps) {
           fill
           className="object-cover transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
       </div>
 
       <div className="relative p-6 -mt-12">
@@ -6124,7 +6124,7 @@ export function TimelineEvent({ year, title, description, index, isLast = false 
       <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 flex flex-col items-center h-full">
         <div ref={dotRef} className="relative z-10 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20" />
         {!isLast && (
-          <div ref={lineRef} className="w-0.5 flex-1 bg-gradient-to-b from-primary to-primary/20 origin-top" />
+          <div ref={lineRef} className="w-0.5 flex-1 bg-linear-to-b from-primary to-primary/20 origin-top" />
         )}
       </div>
 
@@ -6581,7 +6581,7 @@ export function NewsHero() {
     <section ref={heroRef} className="relative overflow-hidden py-20 md:py-32">
       {/* Animated background */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl news-float-element" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl news-float-element" />
       </div>
@@ -6728,7 +6728,7 @@ export function NewsSidebar({ recentNews, popularTags }: NewsSidebarProps) {
       </div>
 
       {/* Newsletter CTA */}
-      <div className="sidebar-item bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl border border-primary/20 p-6">
+      <div className="sidebar-item bg-linear-to-br from-primary/10 to-accent/10 rounded-2xl border border-primary/20 p-6">
         <h3 className="text-lg font-bold mb-2">Boletín Ambiental</h3>
         <p className="text-sm text-muted-foreground mb-4">Recibe las noticias más importantes cada semana.</p>
         <form className="space-y-3">

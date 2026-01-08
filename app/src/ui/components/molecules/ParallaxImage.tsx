@@ -5,8 +5,7 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Image from "next/image"
-
-gsap.registerPlugin(ScrollTrigger)
+import { useReducedMotion } from "../../hooks/useReducedMotion"
 
 interface ParallaxImageProps {
   src: string
@@ -20,14 +19,14 @@ export function ParallaxImage({
   src,
   alt,
   className = "",
-  parallaxSpeed = 0.3,
+  parallaxSpeed = -0.12,
   zoomOnScroll = false,
 }: ParallaxImageProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (prefersReducedMotion) return
 
     const container = containerRef.current
@@ -35,6 +34,7 @@ export function ParallaxImage({
     if (!container || !image) return
 
     const ctx = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger)
       // Parallax movement
       gsap.to(image, {
         yPercent: parallaxSpeed * 100,
@@ -70,7 +70,7 @@ export function ParallaxImage({
 
   return (
     <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
-      <div ref={imageRef} className="relative w-full h-full" style={{ transform: "translateY(-15%)" }}>
+      <div ref={imageRef} className="relative w-full h-full" style={{ transform: "translateY(-6%)" }}>
         <Image src={src || "/placeholder.svg"} alt={alt} fill className="object-cover" sizes="100vw" />
       </div>
     </div>

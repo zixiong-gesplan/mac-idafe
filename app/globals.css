@@ -5,27 +5,31 @@
 
 /* Eco-friendly color palette with green sustainable theme */
 :root {
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.15 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  /* Primary: Sustainable green */
-  --primary: oklch(0.55 0.18 145);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.96 0.02 145);
-  --accent-foreground: oklch(0.15 0 0);
+  --background: #ffffff;
+  --foreground: #1e2a22;
+  --card: #ffffff;
+  --card-foreground: #1e2a22;
+  --popover: #ffffff;
+  --popover-foreground: #1e2a22;
+  /* Brand palette */
+  --brand-green: #2f7a4d;
+  --brand-green-light: #eaf6ee;
+  --brand-yellow: #f5d35e;
+  --brand-text: #1e2a22;
+  --primary: #2f7a4d;
+  --primary-foreground: #ffffff;
+  --secondary: #f7fbf8;
+  --secondary-foreground: #1e2a22;
+  --muted: #f3f7f4;
+  --muted-foreground: #4c5d53;
+  --accent: #eaf6ee;
+  --accent-foreground: #1e2a22;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.55 0.18 145);
-  --chart-1: oklch(0.55 0.18 145);
+  --border: #e4ede7;
+  --input: #e4ede7;
+  --ring: #2f7a4d;
+  --chart-1: #2f7a4d;
   --chart-2: oklch(0.65 0.2 200);
   --chart-3: oklch(0.7 0.15 80);
   --chart-4: oklch(0.6 0.22 25);
@@ -42,27 +46,30 @@
 }
 
 .dark {
-  --background: oklch(0.12 0 0);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.15 0 0);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.15 0 0);
-  --popover-foreground: oklch(0.95 0 0);
-  /* Primary: Lighter green for dark mode */
-  --primary: oklch(0.65 0.18 145);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.22 0 0);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.22 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.25 0.02 145);
-  --accent-foreground: oklch(0.95 0 0);
+  --background: #0f1511;
+  --foreground: #f3f7f4;
+  --card: #121a15;
+  --card-foreground: #f3f7f4;
+  --popover: #121a15;
+  --popover-foreground: #f3f7f4;
+  --brand-green: #65b387;
+  --brand-green-light: #1a2a22;
+  --brand-yellow: #f2c84b;
+  --brand-text: #f3f7f4;
+  --primary: #65b387;
+  --primary-foreground: #0f1511;
+  --secondary: #1a241d;
+  --secondary-foreground: #f3f7f4;
+  --muted: #1a241d;
+  --muted-foreground: #b8c5bc;
+  --accent: #1f2f26;
+  --accent-foreground: #f3f7f4;
   --destructive: oklch(0.5 0.2 27.325);
   --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.25 0 0);
-  --ring: oklch(0.65 0.18 145);
-  --chart-1: oklch(0.65 0.18 145);
+  --border: #213127;
+  --input: #213127;
+  --ring: #65b387;
+  --chart-1: #65b387;
   --chart-2: oklch(0.7 0.2 200);
   --chart-3: oklch(0.75 0.15 80);
   --chart-4: oklch(0.65 0.22 25);
@@ -80,6 +87,10 @@
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-light: var(--brand-green-light);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-text: var(--brand-text);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -124,6 +135,24 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  p {
+    @apply text-foreground/70 leading-relaxed;
+  }
+
+  a {
+    @apply text-primary transition-colors hover:text-primary/80;
+  }
+
+  button {
+    @apply font-semibold;
   }
 
   /* Smooth dark mode transitions */
