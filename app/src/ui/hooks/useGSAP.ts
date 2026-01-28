@@ -3,20 +3,17 @@
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-// Register plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
+import { useReducedMotion } from "./useReducedMotion"
 
 /**
  * Hook for fade-in animation on scroll
  */
 export function useFadeInOnScroll<T extends HTMLElement>() {
   const ref = useRef<T>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
     if (prefersReducedMotion || !ref.current) return
 
     gsap.fromTo(
@@ -50,9 +47,10 @@ export function useFadeInOnScroll<T extends HTMLElement>() {
  */
 export function useStaggerOnScroll<T extends HTMLElement>(staggerDelay = 0.1) {
   const ref = useRef<T>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
     if (prefersReducedMotion || !ref.current) return
 
     const children = ref.current.children
@@ -89,9 +87,10 @@ export function useStaggerOnScroll<T extends HTMLElement>(staggerDelay = 0.1) {
  */
 export function useParallax<T extends HTMLElement>(speed = 0.3) {
   const ref = useRef<T>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
     if (prefersReducedMotion || !ref.current) return
 
     gsap.to(ref.current, {
@@ -121,9 +120,10 @@ export function useParallax<T extends HTMLElement>(speed = 0.3) {
 export function useCountUp(endValue: number, duration = 2, suffix = "") {
   const ref = useRef<HTMLSpanElement>(null)
   const [hasAnimated, setHasAnimated] = useState(false)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
     if (prefersReducedMotion || !ref.current || hasAnimated) {
       if (ref.current) ref.current.textContent = `${endValue}${suffix}`
       return
@@ -163,9 +163,10 @@ export function useCountUp(endValue: number, duration = 2, suffix = "") {
  */
 export function useTextReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
     if (prefersReducedMotion || !ref.current) return
 
     gsap.fromTo(
@@ -204,9 +205,9 @@ export function useTextReveal<T extends HTMLElement>() {
  */
 export function useMagneticEffect<T extends HTMLElement>(strength = 0.3) {
   const ref = useRef<T>(null)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (prefersReducedMotion || !ref.current) return
 
     const element = ref.current

@@ -28,7 +28,7 @@ export function PostClient({ slug }: PostClientProps) {
 
   if (!Post) return null
 
-  return <main className="prose prose-invert mx-auto my-8 px-4 sm:px-8 lg:px-16">
+  return <main className="prose prose-invert mx-auto my-8 px-4 sm:px-8 lg:px-16 mt-20">
       <Post components={components} />
     </main>
 }

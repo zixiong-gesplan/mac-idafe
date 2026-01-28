@@ -3,11 +3,7 @@
 import { useEffect, useRef, type ReactNode } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
+import { useReducedMotion } from "../hooks/useReducedMotion"
 
 interface GSAPProviderProps {
   children: ReactNode
@@ -15,17 +11,18 @@ interface GSAPProviderProps {
 
 export function GSAPProvider({ children }: GSAPProviderProps) {
   const initialized = useRef(false)
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (initialized.current) return
     initialized.current = true
 
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    gsap.registerPlugin(ScrollTrigger)
 
     if (prefersReducedMotion) {
       // Disable all GSAP animations for users who prefer reduced motion
       gsap.globalTimeline.timeScale(0)
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       return
     }
 

@@ -15,7 +15,11 @@ const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
   options: {
     // Use resolvable module paths to keep options serializable for Turbopack.
-    remarkPlugins: [require.resolve('remark-gfm')],
+    remarkPlugins: [
+      require.resolve('remark-gfm'),
+      require.resolve('remark-frontmatter'),
+      [require.resolve('remark-mdx-frontmatter'), { name: 'frontmatter' }],
+    ],
     rehypePlugins: [
       require.resolve('rehype-slug'),
       [require.resolve('rehype-autolink-headings'), { behavior: 'wrap' }],

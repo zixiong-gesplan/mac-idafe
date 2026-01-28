@@ -5,8 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import "./animations.css"
 import { GSAPProvider } from "./src/ui/components/GSAPProvider"
-import { Navbar } from "./src/ui/components/Navbar"
-import { Footer } from "./src/ui/components/Footer"
+import { Layout } from "./src/ui/components/layout/Layout"
 
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -55,11 +54,7 @@ export default function RootLayout({
     <html lang="es" className="bg-background" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         <GSAPProvider>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <Layout>{children}</Layout>
         </GSAPProvider>
         <Analytics />
       </body>
