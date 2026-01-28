@@ -19,18 +19,18 @@ interface ActivitiesSectionProps {
 }
 
 const defaultBullets: ActivityBullet[] = [
-  { text: "STEM corners" },
-  { text: "Outdoor discovery" },
-  { text: "Art & music" },
+  { text: "Formacion docente y recursos didacticos" },
+  { text: "Accion climatica con impacto local" },
+  { text: "Red transnacional de centros asociados" },
 ]
 
 const activitiesImageSrc =
   "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='560' viewBox='0 0 720 560'><rect width='720' height='560' fill='%23bbf7d0'/><path d='M100 140 C120 90 200 80 250 120 C310 160 380 120 420 100 C470 80 540 100 560 160 C580 230 520 260 500 320 C470 400 420 440 340 450 C240 460 120 420 110 320 C100 250 80 200 100 140 Z' fill='%23fef3c7'/><circle cx='240' cy='230' r='52' fill='%23059669' opacity='0.2'/><circle cx='440' cy='300' r='68' fill='%23059669' opacity='0.18'/><text x='50%' y='86%' font-size='28' font-family='Arial' text-anchor='middle' fill='%231f2937'>Activities</text></svg>"
 
 export function ActivitiesSection({
-  heading = "Hands-on Activities Every Day",
-  description = "We blend play and guided learning to build confidence and curiosity.",
-  ctaLabel = "Explore our program",
+  heading = "Aprendizaje activo y partenariado",
+  description = "MAC-IDAFE_2CAP articula escuelas, instituciones y comunidades para impulsar proyectos ambientales colaborativos.",
+  ctaLabel = "Explorar el partenariado",
   bullets = defaultBullets,
   imageAlt = "Children exploring hands-on activities",
 }: ActivitiesSectionProps) {

@@ -20,33 +20,28 @@ interface BenefitsSectionProps {
 
 const defaultItems: BenefitItem[] = [
   {
-    title: "Creative Learning",
-    description: "Hands-on activities to spark curiosity.",
-    ctaLabel: "See projects",
+    title: "Formacion climatica",
+    description: "Fortalecer capacidades en educacion ambiental y accion climatica.",
+    ctaLabel: "Ver objetivo 1",
   },
   {
-    title: "Small Groups",
-    description: "Personal attention for every child.",
-    ctaLabel: "Meet the team",
+    title: "Red escolar activa",
+    description: "Conectar centros educativos para compartir recursos y buenas practicas.",
+    ctaLabel: "Ver objetivo 2",
   },
   {
-    title: "Safe Environment",
-    description: "Secure campus with caring staff.",
-    ctaLabel: "Safety first",
-  },
-  {
-    title: "Play & Explore",
-    description: "Daily play to build social skills.",
-    ctaLabel: "Daily routines",
+    title: "Impacto local",
+    description: "Impulsar proyectos colaborativos con impacto medible en la comunidad.",
+    ctaLabel: "Ver objetivo 3",
   },
 ]
 
 export function BenefitsSection({
-  heading = "Why families choose us",
-  subheading = "Learning experiences designed for confident, curious kids.",
+  heading = "Tres objetivos del proyecto",
+  subheading = "MAC-IDAFE_2CAP se apoya en metas claras para transformar la educacion ambiental.",
   items = defaultItems,
 }: BenefitsSectionProps) {
-  const visibleItems = items.slice(0, 4)
+  const visibleItems = items.slice(0, 3)
   const cardsRef = useRef<HTMLDivElement>(null)
   const prefersReducedMotion = useReducedMotion()
 

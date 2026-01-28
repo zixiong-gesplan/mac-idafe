@@ -21,31 +21,31 @@ interface TestimonialsSectionProps {
 
 const defaultItems: TestimonialItem[] = [
   {
-    quote: "Our daughter loves coming every day.",
-    name: "Maria G.",
-    role: "Parent",
+    quote: "El Colegio Atlantico impulsa proyectos ambientales con el apoyo de MAC-IDAFE_2CAP.",
+    name: "Colegio Atlantico",
+    role: "Centro educativo",
     avatarSrc:
       "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'><rect width='96' height='96' rx='48' fill='%23fde68a'/><circle cx='48' cy='42' r='18' fill='%23059669' opacity='0.25'/><rect x='26' y='60' width='44' height='18' rx='9' fill='%23059669' opacity='0.25'/></svg>",
   },
   {
-    quote: "Great teachers and playful learning.",
-    name: "Luis P.",
-    role: "Parent",
+    quote: "El CEIP La Costa comparte recursos y actividades con otras escuelas de la red.",
+    name: "CEIP La Costa",
+    role: "Centro educativo",
     avatarSrc:
       "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'><rect width='96' height='96' rx='48' fill='%23bbf7d0'/><circle cx='48' cy='40' r='18' fill='%23059669' opacity='0.25'/><rect x='24' y='60' width='48' height='18' rx='9' fill='%23059669' opacity='0.25'/></svg>",
   },
   {
-    quote: "Safe, warm, and inspiring.",
-    name: "Ana R.",
-    role: "Parent",
+    quote: "El IES Monteverde integra la accion climatica en su plan educativo anual.",
+    name: "IES Monteverde",
+    role: "Centro educativo",
     avatarSrc:
       "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'><rect width='96' height='96' rx='48' fill='%23e0f2fe'/><circle cx='48' cy='40' r='18' fill='%23059669' opacity='0.25'/><rect x='24' y='60' width='48' height='18' rx='9' fill='%23059669' opacity='0.25'/></svg>",
   },
 ]
 
 export function TestimonialsSection({
-  heading = "Families love Sunshine Academy",
-  subheading = "Real voices from parents who trust our community every day.",
+  heading = "Colegios que ya participan",
+  subheading = "Experiencias reales de centros educativos que forman parte de la red.",
   items = defaultItems,
 }: TestimonialsSectionProps) {
   const visibleItems = items.slice(0, 3)
