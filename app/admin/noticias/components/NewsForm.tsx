@@ -8,7 +8,7 @@ import { newsFormSchema, type NewsFormValues, buildEmptyValues } from "../schema
 type Props = {
   mode: "create" | "edit"
   initialValues?: NewsFormValues
-  onSubmit: (values: NewsFormValues) => Promise<void>
+  onSubmit: (values: NewsFormValues) => Promise<void> | void
   saving?: boolean
   onCancel?: () => void
 }

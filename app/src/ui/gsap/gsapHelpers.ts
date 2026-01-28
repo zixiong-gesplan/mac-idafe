@@ -55,7 +55,7 @@ export function fadeUp(target: gsap.TweenTarget, options: FadeUpOptions = {}) {
       delay,
       ease: "power3.out",
       scrollTrigger: {
-        trigger,
+        trigger: trigger as gsap.DOMTarget,
         start,
         toggleActions: "play none none none",
       },
@@ -92,7 +92,7 @@ export function staggerIn(targets: gsap.TweenTarget, options: StaggerInOptions =
       stagger,
       ease: "power3.out",
       scrollTrigger: {
-        trigger,
+        trigger: trigger as gsap.DOMTarget,
         start,
         toggleActions: "play none none none",
       },

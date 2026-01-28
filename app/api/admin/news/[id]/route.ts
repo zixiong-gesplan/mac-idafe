@@ -50,7 +50,7 @@ export async function PUT(request: Request, { params }: { params: Promise<Params
     const payload = newsPayloadSchema.parse({ ...body, id: existing.id })
     const updateNews = new UpdateNews(repository)
 
-    const updated = await updateNews.execute(payload)
+    const updated = await updateNews.execute({ ...payload, id: existing.id })
     return NextResponse.json(updated.toJSON(), noStore)
   } catch (error) {
     if (error instanceof ZodError) {
