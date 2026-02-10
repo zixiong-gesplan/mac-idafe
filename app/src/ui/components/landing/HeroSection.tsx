@@ -31,6 +31,24 @@ const heroImages: HeroImage[] = [
     alt: "Primera reunión del proyecto MAC-IDAFE en Madeira",
     rotationClass: "-rotate-3",
     caption: "Primera reunión del proyecto MAC-IDAFE en Madeira",
+  },
+  {
+    src:"/20260210/Reunion_inicial_azores_1.jpeg",
+    alt: "Primera reunión del proyecto MAC-IDAFE en Azores",
+    rotationClass: "-rotate-1",
+    caption: "Primera reunión del proyecto MAC-IDAFE en Azores",
+  },
+  {
+    src:"/20260210/Reunion_inicial_azores_2.jpeg",
+    alt: "Primera reunión del proyecto MAC-IDAFE en Azores",
+    rotationClass: "-rotate-2",
+    caption: "Primera reunión del proyecto MAC-IDAFE en Azores",
+  },
+  {
+    src:"/20260210/Reunion_inicial_azores_3.jpeg",
+    alt: "Primera reunión del proyecto MAC-IDAFE en Azores",
+    rotationClass: "-rotate-3",
+    caption: "Primera reunión del proyecto MAC-IDAFE en Azores",
   }
   // {
   //   src:
