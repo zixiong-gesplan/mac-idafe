@@ -64,36 +64,35 @@ export default async function HomePage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {sortedMdxPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/posts/${post.slug}`}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
-              >
-                <div className="relative h-48 w-full">
+                <Link
+                  key={post.slug}
+                  href={`/posts/${post.slug}`}
+                  className="group relative flex flex-col overflow-hidden rounded-2xl h-80 w-full"
+                >
                   {post.img ? (
                     <Image
-                      src={post.img}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    src={post.img}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-muted-foreground">
-                      Sin imagen
+                    Sin imagen
                     </div>
-                  )}
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <div className="text-sm text-muted-foreground">
-                    {post.date ? new Date(post.date).toLocaleDateString("es-ES") : "Sin fecha"}
+                    )}
+                    <div className="absolute inset-0 bg-linear-to-t from-emerald-900/80 via-emerald-900/40 to-transparent" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
+                    <div className="text-sm text-emerald-100">
+                      {post.date ? new Date(post.date).toLocaleDateString("es-ES") : "Sin fecha"}
+                    </div>
+                    <h3 className="mt-2 text-xl font-semibold text-white">{post.title}</h3>
+                      {/* {post.description ? (
+                      <p className="mt-2 text-gray-200 line-clamp-2">{post.description}</p>
+                      ) : null} */}
+                    <span className="mt-4 text-sm font-medium text-yellow-400">Leer noticia →</span>
                   </div>
-                  <h3 className="mt-2 text-xl font-semibold text-foreground">{post.title}</h3>
-                  {post.description ? (
-                    <p className="mt-2 text-muted-foreground">{post.description}</p>
-                  ) : null}
-                  <span className="mt-4 text-sm font-medium text-primary">Leer noticia </span>
-                </div>
-              </Link>
+                </Link>
             ))}
           </div>
         </div>
