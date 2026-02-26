@@ -90,16 +90,16 @@ export function Header() {
   }, [prefersReducedMotion])
 
   const desktopHeaderClass = scrolled
-    ? "md:border-b md:border-primary/10 md:bg-white md:backdrop-blur-md md:shadow-sm md:text-[#2F8852]"
-    : "md:border-b md:border-transparent md:bg-[#2F8852] md:text-white"
-  const desktopMutedTextClass = scrolled ? "md:text-[#2F8852]/80" : "md:text-white/80"
-  const desktopHoverClass = scrolled ? "md:hover:text-[#2F8852]" : "md:hover:text-amber-200"
+    ? "md:border-b md:border-primary/10 md:bg-white md:backdrop-blur-md md:shadow-sm md:text-primary"
+    : "md:border-b md:border-transparent md:bg-primary md:text-white"
+  const desktopMutedTextClass = scrolled ? "md:text-primary/80" : "md:text-white/80"
+  const desktopHoverClass = scrolled ? "md:hover:text-primary" : "md:hover:text-cta"
 
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 z-40 w-full bg-[#2F8852] text-white shadow-sm transition-colors duration-300 ${
-        scrolled ? "border-b border-primary/10 bg-white text-[#2F8852]" : "border-b border-transparent"
+      className={`fixed top-0 z-40 w-full bg-primary text-white shadow-sm transition-colors duration-300 ${
+        scrolled ? "border-b border-primary/10 bg-white text-primary" : "border-b border-transparent"
       } ${desktopHeaderClass}`}
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-4 py-4 text-center md:flex-row md:items-center md:text-left">
@@ -158,7 +158,7 @@ export function Header() {
         <Link
           ref={ctaRef}
           href="#"
-          className={`inline-flex items-center justify-center rounded-full bg-amber-300 px-5 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:bg-amber-200 focus-visible-ring md:ml-auto ${
+          className={`inline-flex items-center justify-center rounded-full bg-cta-500 px-5 py-2 text-sm font-semibold text-cta-foreground shadow-sm transition hover:bg-cta-900 hover:text-white focus-visible-ring focus-visible:ring-cta-900 md:ml-auto ${
             menuOpen ? "flex" : "hidden md:inline-flex"
           }`}
             onClick={() => setMenuOpen(false)}
@@ -172,3 +172,4 @@ export function Header() {
     </header>
   )
 }
+

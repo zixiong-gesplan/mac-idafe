@@ -106,7 +106,7 @@ export function ActivitiesSection({
   return (
     <section className="relative bg-background py-12 md:py-16 lg:py-20">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 text-center md:flex-row md:justify-between md:gap-12 md:text-left">
-        <DoodleDecoration className="right-6 top-6 hidden md:block text-amber-200/70" variant="zigzag" />
+        <DoodleDecoration className="right-6 top-6 hidden md:block text-cta/70" variant="zigzag" />
         <div className="flex w-full flex-1 flex-col items-center gap-5 md:max-w-xl md:items-start">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Actividades</p>
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">{heading}</h2>
@@ -148,3 +148,4 @@ export function ActivitiesSection({
     </section>
   )
 }
+

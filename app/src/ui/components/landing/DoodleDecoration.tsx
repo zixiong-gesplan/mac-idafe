@@ -11,7 +11,7 @@ const doodlePaths = {
 }
 
 export function DoodleDecoration({
-  className = "text-emerald-200/70",
+  className = "text-primary/30",
   variant = "curve",
   width = 220,
   height = 80,

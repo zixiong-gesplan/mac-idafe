@@ -80,7 +80,7 @@ export function TestimonialsSection({
   return (
     <section className="relative bg-background py-12 md:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-6xl px-4">
-        <DoodleDecoration className="left-6 top-8 hidden md:block text-emerald-200/70" variant="curve" />
+        <DoodleDecoration className="left-6 top-8 hidden md:block text-primary/30" variant="curve" />
         <div className="flex flex-col gap-3 text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Testimonials</p>
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">{heading}</h2>

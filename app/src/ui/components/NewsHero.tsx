@@ -70,7 +70,7 @@ export function NewsHero() {
           />
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-            <GradientText text="que Importan" colors={["#10b981", "#06b6d4", "#3b82f6", "#10b981"]} />
+            <GradientText text="que Importan" colors={["var(--primary)", "var(--secondary)", "var(--cta)", "var(--primary)"]} />
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">

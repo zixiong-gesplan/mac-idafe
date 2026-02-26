@@ -74,7 +74,7 @@ export function BenefitsSection({
   return (
     <section className="relative bg-background py-12 md:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-6xl px-4">
-        <DoodleDecoration className="right-6 top-6 hidden md:block text-amber-200/70" variant="zigzag" />
+        <DoodleDecoration className="right-6 top-6 hidden md:block text-cta/70" variant="zigzag" />
         <div className="flex flex-col gap-3 text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Benefits</p>
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">{heading}</h2>
@@ -111,3 +111,4 @@ export function BenefitsSection({
     </section>
   )
 }
+

@@ -15,7 +15,7 @@ export function GradientText({
   text,
   className = "",
   as: Component = "span",
-  colors = ["var(--primary)", "#10b981", "#06b6d4", "var(--primary)"],
+  colors = ["var(--primary)", "var(--secondary)", "var(--cta)", "var(--primary)"],
   animationDuration = 5,
 }: GradientTextProps) {
   const textRef = useRef<HTMLElement>(null)

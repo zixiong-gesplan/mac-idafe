@@ -93,7 +93,7 @@ export function HeroSection() {
             text={titlePart2}
             as="span"
             className="inline"
-            colors={["#22c55e", "#10b981", "#06b6d4", "#22c55e"]}
+            colors={["var(--primary)", "var(--secondary)", "var(--cta)", "var(--primary)"]}
           />
         </h1>
 

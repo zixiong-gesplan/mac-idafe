@@ -161,7 +161,7 @@ export function HeroSection() {
   }, [activeIndex, prefersReducedMotion])
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_55%),linear-gradient(180deg,_#0f7a38_0%,_#0b6b33_60%,_#0a5f2e_100%)] text-primary-foreground">
+    <section className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_55%),linear-gradient(180deg,_#3176b1_0%,_#2b6a9e_60%,_#245987_100%)] text-primary-foreground">
       <div ref={doodleRef} className="pointer-events-none absolute inset-0">
         <span className="absolute left-6 top-10 h-24 w-24 rounded-full border border-primary-foreground/25 opacity-40" />
         <span className="absolute right-10 top-24 h-16 w-16 -rotate-12 rounded-lg border border-primary-foreground/25 opacity-30" />
@@ -182,7 +182,7 @@ export function HeroSection() {
           />
           <path
             d="M0 125 C220 55 420 55 620 125 C820 195 1020 195 1200 125 L1200 220 L0 220 Z"
-            fill="rgba(167, 243, 208, 0.6)"
+            fill="rgba(49, 118, 177, 0.6)"
           />
         </svg>
       </div>
@@ -214,7 +214,7 @@ export function HeroSection() {
             <div>
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-amber-200 focus-visible-ring"
+                className="inline-flex items-center justify-center rounded-full bg-cta-500 px-6 py-3 text-sm font-semibold text-cta-foreground shadow-md transition hover:bg-cta-900 hover:text-white focus-visible-ring focus-visible:ring-cta-900"
               >
                 Conocer el proyecto
               </button>
@@ -264,7 +264,7 @@ export function HeroSection() {
                 <button
                   type="button"
                   onClick={() => setSlide((activeIndex - 1 + totalSlides) % totalSlides)}
-                  className="rounded-full border border-primary-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] transition focus-visible-ring inline-flex items-center justify-center bg-amber-300 text-foreground shadow-md hover:bg-amber-200 focus-visible-ring"
+                  className="rounded-full border border-primary-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] transition focus-visible-ring focus-visible:ring-cta-900 inline-flex items-center justify-center bg-cta-500 text-cta-foreground shadow-md hover:bg-cta-900 hover:text-white"
                   aria-label="Previous slide"
                 >
                   Prev
@@ -276,7 +276,7 @@ export function HeroSection() {
                       type="button"
                       onClick={() => setSlide(index)}
                       className={`h-2.5 w-2.5 rounded-full border border-primary-foreground/50 transition ${
-                        index === activeIndex ? "bg-amber-300" : "bg-primary-foreground/50"
+                        index === activeIndex ? "bg-cta-500" : "bg-primary-foreground/50"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -285,7 +285,7 @@ export function HeroSection() {
                 <button
                   type="button"
                   onClick={() => setSlide((activeIndex + 1) % totalSlides)}
-                  className="rounded-full border border-primary-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] transition focus-visible-ring inline-flex items-center justify-center bg-amber-300 text-foreground shadow-md hover:bg-amber-200 focus-visible-ring"
+                  className="rounded-full border border-primary-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] transition focus-visible-ring focus-visible:ring-cta-900 inline-flex items-center justify-center bg-cta-500 text-cta-foreground shadow-md hover:bg-cta-900 hover:text-white"
                   aria-label="Next slide"
                 >
                   Next
@@ -301,5 +301,6 @@ export function HeroSection() {
     </section>
   )
 }
+
 
 

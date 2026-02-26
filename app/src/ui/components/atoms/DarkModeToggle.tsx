@@ -76,7 +76,7 @@ export function DarkModeToggle() {
       {/* Sun icon */}
       <svg
         ref={sunRef}
-        className="absolute w-6 h-6 text-amber-500"
+        className="absolute w-6 h-6 text-cta"
         style={{ opacity: isDark ? 0 : 1, transform: isDark ? "scale(0) rotate(-90deg)" : "scale(1) rotate(0)" }}
         fill="none"
         viewBox="0 0 24 24"
@@ -101,3 +101,4 @@ export function DarkModeToggle() {
     </button>
   )
 }
+

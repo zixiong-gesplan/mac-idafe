@@ -11,7 +11,7 @@ export function BenefitCard({ icon, title, description, ctaLabel }: BenefitCardP
   return (
     <article className="group benefit-card flex h-full flex-col rounded-3xl border border-primary/10 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div
-        className="benefit-icon flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-primary transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105"
+        className="benefit-icon flex h-12 w-12 items-center justify-center rounded-full bg-cta/20 text-primary transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105"
         aria-hidden
       >
         {icon}
@@ -29,3 +29,4 @@ export function BenefitCard({ icon, title, description, ctaLabel }: BenefitCardP
     </article>
   )
 }
+

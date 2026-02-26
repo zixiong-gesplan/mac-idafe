@@ -104,7 +104,7 @@ export default function ContactoPage() {
 
             <button
               type="submit"
-              className="mt-2 inline-flex w-fit items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-amber-200 focus-visible-ring"
+              className="mt-2 inline-flex w-fit items-center justify-center rounded-full bg-cta-500 px-6 py-3 text-sm font-semibold text-cta-foreground transition hover:bg-cta-900 hover:text-white focus-visible-ring focus-visible:ring-cta-900"
             >
               Enviar solicitud
             </button>
@@ -114,3 +114,4 @@ export default function ContactoPage() {
     </div>
   )
 }
+

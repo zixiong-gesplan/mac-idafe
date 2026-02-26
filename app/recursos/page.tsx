@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
 
 interface ResourceItem {
@@ -62,7 +62,7 @@ function ResourceCard({ title, description, href, cta }: ResourceItem) {
       <p className="mt-3 text-sm leading-relaxed text-foreground/70">{description}</p>
       <Link
         href={href}
-        className="mt-5 inline-flex items-center rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-amber-200 focus-visible-ring"
+        className="mt-5 inline-flex items-center rounded-full bg-cta-500 px-4 py-2 text-sm font-semibold text-cta-foreground transition hover:bg-cta-900 hover:text-white focus-visible-ring focus-visible:ring-cta-900"
       >
         {cta}
       </Link>
@@ -106,3 +106,4 @@ export default function ResourcesPage() {
     </div>
   )
 }
+

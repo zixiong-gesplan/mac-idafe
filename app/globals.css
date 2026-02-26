@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Eco-friendly color palette with green sustainable theme */
+/* MAC-IDAFE brand palette */
 :root {
   --background: #ffffff;
   --foreground: #1e2a22;
@@ -12,24 +12,47 @@
   --popover: #ffffff;
   --popover-foreground: #1e2a22;
   /* Brand palette */
-  --brand-green: #2f7a4d;
-  --brand-green-light: #eaf6ee;
-  --brand-yellow: #f5d35e;
+  --brand-blue: #3176b1;
+  --brand-blue-light: #e8f1f8;
+  --brand-green: #436b4b;
+  --brand-orange: #f2a33c;
   --brand-text: #1e2a22;
-  --primary: #2f7a4d;
+  --primary-100: #e8f1f8;
+  --primary-200: #c5dcef;
+  --primary-300: #8fb9dd;
+  --primary-400: #5f97c7;
+  --primary-500: #3176b1;
+  --primary-600: #2b6a9e;
+  --primary-700: #245987;
+  --primary-800: #1c4569;
+  --primary-900: #122a40;
+  --primary: #3176b1;
   --primary-foreground: #ffffff;
-  --secondary: #f7fbf8;
-  --secondary-foreground: #1e2a22;
+  --cta-100: #fde7c5;
+  --cta-200: #fbd49b;
+  --cta-300: #f7be6f;
+  --cta-400: #f4af54;
+  --cta-500: #f2a33c;
+  --cta-600: #d98b29;
+  --cta-700: #ad6a17;
+  --cta-800: #8a5213;
+  --cta-900: #6d400f;
+  --secondary: #436b4b;
+  --secondary-foreground: #ffffff;
   --muted: #f3f7f4;
   --muted-foreground: #4c5d53;
-  --accent: #eaf6ee;
+  --accent: #e8f1f8;
   --accent-foreground: #1e2a22;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
   --border: #e4ede7;
   --input: #e4ede7;
-  --ring: #2f7a4d;
-  --chart-1: #2f7a4d;
+  --ring: #3176b1;
+  --cta: #f2a33c;
+  --cta-foreground: #ffffff;
+  --text-on-light-primary: #245987;
+  --text-on-light-cta: #ad6a17;
+  --chart-1: #3176b1;
   --chart-2: oklch(0.65 0.2 200);
   --chart-3: oklch(0.7 0.15 80);
   --chart-4: oklch(0.6 0.22 25);
@@ -52,31 +75,54 @@
   --card-foreground: #f3f7f4;
   --popover: #121a15;
   --popover-foreground: #f3f7f4;
-  --brand-green: #65b387;
-  --brand-green-light: #1a2a22;
-  --brand-yellow: #f2c84b;
+  --brand-blue: #3176b1;
+  --brand-blue-light: #1c2d3d;
+  --brand-green: #436b4b;
+  --brand-orange: #f2a33c;
   --brand-text: #f3f7f4;
-  --primary: #65b387;
+  --primary-100: #1c2d3d;
+  --primary-200: #24517a;
+  --primary-300: #2b6a9e;
+  --primary-400: #2f72ad;
+  --primary-500: #3176b1;
+  --primary-600: #5b99c7;
+  --primary-700: #8fb9dd;
+  --primary-800: #c5dcef;
+  --primary-900: #e8f1f8;
+  --primary: #3176b1;
   --primary-foreground: #0f1511;
-  --secondary: #1a241d;
-  --secondary-foreground: #f3f7f4;
+  --cta-100: #6d400f;
+  --cta-200: #7a4811;
+  --cta-300: #8a5213;
+  --cta-400: #c57b20;
+  --cta-500: #f2a33c;
+  --cta-600: #f5b253;
+  --cta-700: #f7be6f;
+  --cta-800: #fad29a;
+  --cta-900: #fde7c5;
+  --secondary: #436b4b;
+  --secondary-foreground: #ffffff;
   --muted: #1a241d;
   --muted-foreground: #b8c5bc;
-  --accent: #1f2f26;
+  --accent: #1c2d3d;
   --accent-foreground: #f3f7f4;
   --destructive: oklch(0.5 0.2 27.325);
   --destructive-foreground: oklch(0.95 0 0);
   --border: #213127;
   --input: #213127;
-  --ring: #65b387;
-  --chart-1: #65b387;
+  --ring: #3176b1;
+  --cta: #f2a33c;
+  --cta-foreground: #ffffff;
+  --text-on-light-primary: #8fb9dd;
+  --text-on-light-cta: #f7be6f;
+  --chart-1: #3176b1;
   --chart-2: oklch(0.7 0.2 200);
   --chart-3: oklch(0.75 0.15 80);
   --chart-4: oklch(0.65 0.22 25);
   --chart-5: oklch(0.6 0.16 280);
   --sidebar: oklch(0.18 0 0);
   --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.65 0.18 145);
+  --sidebar-primary: #3176b1;
   --sidebar-primary-foreground: oklch(0.95 0 0);
   --sidebar-accent: oklch(0.22 0 0);
   --sidebar-accent-foreground: oklch(0.95 0 0);
@@ -87,9 +133,10 @@
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-light: var(--brand-blue-light);
   --color-brand-green: var(--brand-green);
-  --color-brand-green-light: var(--brand-green-light);
-  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-orange: var(--brand-orange);
   --color-brand-text: var(--brand-text);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -99,6 +146,15 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -110,6 +166,19 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-100: var(--cta-100);
+  --color-cta-200: var(--cta-200);
+  --color-cta-300: var(--cta-300);
+  --color-cta-400: var(--cta-400);
+  --color-cta-500: var(--cta-500);
+  --color-cta-600: var(--cta-600);
+  --color-cta-700: var(--cta-700);
+  --color-cta-800: var(--cta-800);
+  --color-cta-900: var(--cta-900);
+  --color-text-on-light-primary: var(--text-on-light-primary);
+  --color-text-on-light-cta: var(--text-on-light-cta);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -181,3 +250,5 @@
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }
+
+
