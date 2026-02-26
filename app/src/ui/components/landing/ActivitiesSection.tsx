@@ -25,12 +25,11 @@ const defaultBullets: ActivityBullet[] = [
 ]
 
 const activitiesImageSrc =
-  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='560' viewBox='0 0 720 560'><rect width='720' height='560' fill='%23bbf7d0'/><path d='M100 140 C120 90 200 80 250 120 C310 160 380 120 420 100 C470 80 540 100 560 160 C580 230 520 260 500 320 C470 400 420 440 340 450 C240 460 120 420 110 320 C100 250 80 200 100 140 Z' fill='%23fef3c7'/><circle cx='240' cy='230' r='52' fill='%23059669' opacity='0.2'/><circle cx='440' cy='300' r='68' fill='%23059669' opacity='0.18'/><text x='50%' y='86%' font-size='28' font-family='Arial' text-anchor='middle' fill='%231f2937'>Activities</text></svg>"
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='560' viewBox='0 0 720 560'><rect width='720' height='560' fill='%23bbf7d0'/><path d='M100 140 C120 90 200 80 250 120 C310 160 380 120 420 100 C470 80 540 100 560 160 C580 230 520 260 500 320 C470 400 420 440 340 450 C240 460 120 420 110 320 C100 250 80 200 100 140 Z' fill='%23fef3c7'/><circle cx='240' cy='230' r='52' fill='%23059669' opacity='0.2'/><circle cx='440' cy='300' r='68' fill='%23059669' opacity='0.18'/><text x='50%' y='86%' font-size='28' font-family='Arial' text-anchor='middle' fill='%231f2937'>Actividades</text></svg>"
 
 export function ActivitiesSection({
   heading = "Aprendizaje activo y partenariado",
   description = "MAC-IDAFE_2CAP articula escuelas, instituciones y comunidades para impulsar proyectos ambientales colaborativos.",
-  ctaLabel = "Explorar el partenariado",
   bullets = defaultBullets,
   imageAlt = "Children exploring hands-on activities",
 }: ActivitiesSectionProps) {
@@ -109,7 +108,7 @@ export function ActivitiesSection({
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 text-center md:flex-row md:justify-between md:gap-12 md:text-left">
         <DoodleDecoration className="right-6 top-6 hidden md:block text-amber-200/70" variant="zigzag" />
         <div className="flex w-full flex-1 flex-col items-center gap-5 md:max-w-xl md:items-start">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Activities</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Actividades</p>
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">{heading}</h2>
           <p className="text-sm text-foreground/70 sm:text-base">{description}</p>
           <ul ref={bulletsRef} className="grid gap-3 text-left">
@@ -132,14 +131,6 @@ export function ActivitiesSection({
               />
             ))}
           </ul>
-          <div>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-white px-5 py-2 text-sm font-semibold text-primary shadow-sm transition hover:border-primary hover:text-foreground focus-visible-ring"
-            >
-              {ctaLabel}
-            </button>
-          </div>
         </div>
 
         <div className="flex w-full flex-1 justify-center md:justify-end">

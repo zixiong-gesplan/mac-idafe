@@ -15,8 +15,8 @@ interface HeaderLink {
 const navigation: HeaderLink[] = [
   { label: "Inicio", href: "/" },
   { label: "Noticias", href: "/posts" },
-  { label: "Recursos", href: "#" },
-  { label: "Contacto", href: "#" },
+  { label: "Recursos", href: "/recursos" },
+  { label: "Contacto", href: "/contacto" },
 ]
 
 export function Header() {
@@ -163,7 +163,7 @@ export function Header() {
           }`}
             onClick={() => setMenuOpen(false)}
           >
-            Únete ahora
+            {"\u00danete ahora"}
           </Link>
         </nav>
 
