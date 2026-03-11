@@ -1,8 +1,9 @@
 interface LogoProps {
   className?: string
+  scrolled?: boolean
 }
 
-export default function Logo({ className }: LogoProps) {
+export default function Logo({ className, scrolled = false }: LogoProps) {
   return (
     <svg
       width="100%"
@@ -13,7 +14,7 @@ export default function Logo({ className }: LogoProps) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"
       className={className}
-      fill="currentColor"
+      fill={scrolled ? "#4074b8" : "currentColor"}
     >
       <g transform="matrix(1,0,0,1,-1294.08,-993.727)">
         <g transform="matrix(4.16667,0,0,4.16667,-1188.88,-832.7)">

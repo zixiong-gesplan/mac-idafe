@@ -89,7 +89,7 @@ export default async function HomePage() {
                       {/* {post.description ? (
                       <p className="mt-2 text-gray-200 line-clamp-2">{post.description}</p>
                       ) : null} */}
-                    <span className="mt-4 inline-flex w-fit items-center rounded-full bg-cta-600/100 px-4 py-2 text-sm font-semibold text-white transition group-hover:shadow-md group-hover:ring-2 group-hover:ring-cta-300/50">
+                    <span className="mt-4 inline-flex w-fit items-center rounded-full bg-cta-600 px-4 py-2 text-sm font-semibold text-white transition group-hover:shadow-md group-hover:ring-2 group-hover:ring-cta-300/50">
                       Leer mas
                     </span>
                   </div>
