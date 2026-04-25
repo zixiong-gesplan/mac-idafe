@@ -1,9 +1,9 @@
-import { TextReveal } from "@/app/src/ui/components/atoms/Text/Reveal"
-import { GradientText } from "@/app/src/ui/components/atoms/Text/Gradient"
-import { MagneticButton } from "@/app/src/ui/components/atoms/MagneticButton"
-import { Counter } from "@/app/src/ui/components/atoms/Counter"
+import { TextReveal } from "@ui/components/atoms/Text/Reveal"
+import { GradientText } from "@ui/components/atoms/Text/Gradient"
+import { MagneticButton } from "@ui/components/atoms/MagneticButton"
+import { Counter } from "@ui/components/atoms/Counter"
 import { ScrollStorySection } from "@ui/components/ScrollStorySection"
-import { AnimatedSection } from "@/app/src/ui/components/molecules/Section/Animated"
+import { AnimatedSection } from "@ui/components/molecules/Section/Animated"
 import { ParallaxImage, TeamMemberCard, TimelineEvent, ValueCard } from "@ui/components/molecules"
 
 

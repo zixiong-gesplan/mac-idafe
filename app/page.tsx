@@ -5,6 +5,7 @@ import { ActivitiesSection } from "@ui/components/landing/ActivitiesSection"
 import { PartnersSection } from "@ui/components/molecules/Section/Partners"
 import { ScrollProgressSections } from "@ui/components/ScrollProgressSections"
 import { StatsSection } from "@ui/components/molecules/Section/Stats"
+import { NewsCarousel } from "@ui/components/landing/NewsCarousel"
 import Link from "next/link"
 import Image from "next/image"
 import { getMdxPost, getMdxSlugs } from "@/lib/mdx"
@@ -41,7 +42,7 @@ export default async function HomePage() {
     const aTime = a.date ? new Date(a.date).getTime() : 0
     const bTime = b.date ? new Date(b.date).getTime() : 0
     return bTime - aTime
-  })
+  }).slice(0, 5)
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgressSections sections={sections} />
@@ -61,41 +62,7 @@ export default async function HomePage() {
               Ultimas novedades y comunicados del proyecto.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {sortedMdxPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/posts/${post.slug}`}
-                  className="group relative flex h-80 w-full flex-col overflow-hidden rounded-2xl border border-primary/15 bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-                >
-                  {post.img ? (
-                    <Image
-                    src={post.img}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-muted-foreground">
-                    Sin imagen
-                    </div>
-                    )}
-                    <div className="absolute inset-0 bg-linear-to-t from-primary-900/85 via-primary-700/60 to-transparent" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
-                    <div className="text-sm text-primary-100">
-                      {post.date ? new Date(post.date).toLocaleDateString("es-ES") : "Sin fecha"}
-                    </div>
-                    <h3 className="mt-2 text-xl font-semibold text-white">{post.title}</h3>
-                      {/* {post.description ? (
-                      <p className="mt-2 text-gray-200 line-clamp-2">{post.description}</p>
-                      ) : null} */}
-                    <span className="mt-4 inline-flex w-fit items-center rounded-full bg-cta-600 px-4 py-2 text-sm font-semibold text-white transition group-hover:shadow-md group-hover:ring-2 group-hover:ring-cta-300/50">
-                      Leer mas
-                    </span>
-                  </div>
-                </Link>
-            ))}
-          </div>
+          <NewsCarousel posts={sortedMdxPosts} />
         </div>
       </section>
       <section id="partners">

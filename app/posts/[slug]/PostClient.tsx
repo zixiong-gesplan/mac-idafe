@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { components } from '@/app/src/ui/adapters/mdx-components'
+import { components } from '@ui/adapters/mdx-components'
 import type { MDXComponents } from 'mdx/types'
 
 type MdxComponent = React.ComponentType<{ components?: MDXComponents }>

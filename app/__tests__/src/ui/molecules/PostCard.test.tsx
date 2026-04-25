@@ -2,7 +2,7 @@
 import { renderToString } from "react-dom/server"
 import { describe, expect, it } from "vitest"
 import { PostCard } from "@ui/components/molecules/PostCard"
-import { PostDTO } from "@/app/src/ui/adapters/PostAdapter"
+import { PostDTO } from "@ui/adapters/PostAdapter"
 
 const post: PostDTO = {
   id: "p1",

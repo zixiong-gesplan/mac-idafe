@@ -1,3 +1,3 @@
 'use client'
 
-export { useMDXComponents } from '@/app/src/ui/adapters/mdx-components'
+export { useMDXComponents } from '@ui/adapters/mdx-components'

@@ -5,7 +5,7 @@ import { BreakingNewsTicker } from "@ui/components/BreakingNewsTicker"
 import { NewsHero } from "@ui/components/NewsHero"
 import { NewsGrid } from "@ui/components/NewsGrid"
 import { NewsSidebar } from "@ui/components/NewsSidebar"
-import { Boundary } from "@/app/src/ui/components/utils/Boundary"
+import { Boundary } from "@ui/components/utils/Boundary"
 import { NewsCategoryFilter, NewsSearchBar } from "@ui/components/molecules"
 import {
   deriveCategories,
