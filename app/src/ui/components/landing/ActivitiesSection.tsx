@@ -137,7 +137,7 @@ export function ActivitiesSection({
           <figure className="w-full max-w-md rounded-[36px] bg-white p-4 shadow-xl md:max-w-lg">
             <div ref={imageRef} className="overflow-hidden rounded-[28px]">
               <img
-                src={activitiesImageSrc}
+                src="/20260210/Reunion_inicial_azores_3.jpeg"
                 alt={imageAlt}
                 className="h-64 w-full object-cover sm:h-72 md:h-90"
               />

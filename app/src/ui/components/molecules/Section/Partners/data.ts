@@ -17,14 +17,14 @@ export const partners = [
   {
     name: "Secretaria Regional de Turismo, Ambiente e Cultura",
     description: "Direção de Serviços de Ação Climática e Sustentabilidade.",
-    logo: "/Azores.png",
+    logo: "/Madeira.png",
     website: "https://portal.azores.gov.pt/en/home",
     category: "Socio Feder",
   },
   {
     name: "Secretaria Regional do Ambiente e Ação Climática",
     description: "Secretaria Regional do Ambiente e Ação Climática da Madeira.",
-    logo: "/Madeira.png",
+    logo: "/Azores.png",
     website: "https://www.madeira.gov.pt/dram/",
     category: "Socio Feder",
   },

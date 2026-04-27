@@ -25,12 +25,7 @@ const heroImages: HeroImage[] = [
     rotationClass: "-rotate-3",
     caption: "Primera reunión del proyecto MAC-IDAFE en Madeira",
   },
-  {
-    src: "/20260127/Reunion_inicial_madeira_3.jpeg",
-    alt: "Primera reunión del proyecto MAC-IDAFE en Madeira",
-    rotationClass: "-rotate-3",
-    caption: "Primera reunión del proyecto MAC-IDAFE en Madeira",
-  },
+
   {
     src: "/20260210/Reunion_inicial_azores_1.jpeg",
     alt: "Primera reunión del proyecto MAC-IDAFE en Azores",
@@ -44,32 +39,17 @@ const heroImages: HeroImage[] = [
     caption: "Primera reunión del proyecto MAC-IDAFE en Azores",
   },
   {
-    src: "/20260210/Reunion_inicial_azores_3.jpeg",
-    alt: "Primera reunión del proyecto MAC-IDAFE en Azores",
+    src: "/20260310/Reunion_inicial_cv_1.jpg",
+    alt: "Primera reunión del proyecto MAC-IDAFE en Cabo Verde",
     rotationClass: "-rotate-3",
-    caption: "Primera reunión del proyecto MAC-IDAFE en Azores",
+    caption: "Primera reunión del proyecto MAC-IDAFE en Cabo Verde",
   },
-  // {
-  //   src:
-  //     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='480' viewBox='0 0 640 480'><rect width='640' height='480' fill='%23fce7f3'/><rect x='50' y='50' width='540' height='300' fill='%23bbf7d0'/><circle cx='200' cy='210' r='58' fill='%23059669' opacity='0.18'/><circle cx='430' cy='210' r='74' fill='%23059669' opacity='0.22'/><text x='50%' y='85%' fontSize='28' fontFamily='Arial' text-anchor='middle' fill='%231f2937'>Grow</text></svg>",
-  //   alt: "Students collaborating in small groups",
-  //   rotationClass: "-rotate-2",
-  //   caption: "Growing together",
-  // },
-  // {
-  //   src:
-  //     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='480' viewBox='0 0 640 480'><rect width='640' height='480' fill='%23fef3c7'/><rect x='60' y='60' width='520' height='300' fill='%23bbf7d0'/><circle cx='210' cy='190' r='56' fill='%23059669' opacity='0.2'/><circle cx='460' cy='220' r='72' fill='%23059669' opacity='0.2'/><text x='50%' y='85%' fontSize='28' fontFamily='Arial' text-anchor='middle' fill='%231f2937'>Discover</text></svg>",
-  //   alt: "A classroom moment full of discovery",
-  //   rotationClass: "rotate-3",
-  //   caption: "Discover daily",
-  // },
-  // {
-  //   src:
-  //     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='480' viewBox='0 0 640 480'><rect width='640' height='480' fill='%23ecfccb'/><rect x='50' y='60' width='540' height='300' fill='%23fef9c3'/><circle cx='190' cy='210' r='62' fill='%23059669' opacity='0.2'/><circle cx='460' cy='200' r='68' fill='%23059669' opacity='0.2'/><text x='50%' y='85%' fontSize='28' fontFamily='Arial' text-anchor='middle' fill='%231f2937'>Learn</text></svg>",
-  //   alt: "Children learning through playful activities",
-  //   rotationClass: "-rotate-6",
-  //   caption: "Learn with joy",
-  // },
+    {
+    src: "/20260310/Reunion_inicial_cv_2.jpeg",
+    alt: "Primera reunión del proyecto MAC-IDAFE en Cabo Verde",
+    rotationClass: "-rotate-3",
+    caption: "Primera reunión del proyecto MAC-IDAFE en Cabo Verde",
+  },
 ];
 
 export function HeroSection() {
