@@ -18,7 +18,7 @@ interface NewsCarouselProps {
 
 export function NewsCarousel({ posts }: NewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const autoplayIntervalRef = useRef<NodeJS.Timeout>()
+  const autoplayIntervalRef = useRef<NodeJS.Timeout>(null)
 
   const itemsPerView = 2
   const totalSlides = Math.max(1, posts.length - itemsPerView + 1)

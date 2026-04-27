@@ -25,7 +25,8 @@ type InfoCardAction =
       actionAriaLabel?: never
     }
 
-export interface InfoCardProps extends BaseA11yProps, InfoCardAction {
+export type InfoCardProps = BaseA11yProps &
+  InfoCardAction & {
   title: string
   description?: string
   meta?: string
@@ -41,9 +42,11 @@ export function InfoCard({
   meta,
   icon,
   className,
+
   ...action
 }: InfoCardProps) {
-  const hasAction = "href" in action || "onClick" in action
+  const hasLinkAction = "href" in action && typeof action.href === "string"
+  const hasButtonAction = "onClick" in action && typeof action.onClick === "function"
 
   return (
     <article
@@ -59,9 +62,9 @@ export function InfoCard({
       {meta ? <p className="mt-2 text-sm font-medium text-primary/80">{meta}</p> : null}
       {description ? <p className="mt-3 text-sm leading-relaxed text-foreground/70">{description}</p> : null}
 
-      {hasAction ? (
+      {hasLinkAction || hasButtonAction ? (
         <div className="mt-5">
-          {"href" in action ? (
+          {hasLinkAction ? (
             <Link
               href={action.href}
               aria-label={action.actionAriaLabel}
@@ -69,7 +72,7 @@ export function InfoCard({
             >
               {action.ctaLabel}
             </Link>
-          ) : (
+          ) : hasButtonAction ? (
             <button
               type="button"
               onClick={action.onClick}
@@ -78,7 +81,7 @@ export function InfoCard({
             >
               {action.ctaLabel}
             </button>
-          )}
+          ) : null}
         </div>
       ) : null}
     </article>
