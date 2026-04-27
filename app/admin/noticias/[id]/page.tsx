@@ -1,8 +1,9 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { Toaster, toast } from "sonner"
+import { EmptyState, ErrorState } from "@ui/components/shared"
 import { NewsForm } from "../components/NewsForm"
 import type { NewsDTO } from "../types"
 import { mapNewsToFormValues, toNewsPayload, type NewsFormValues } from "../schema"
@@ -78,9 +79,13 @@ export default function EditNewsPage() {
             Volver al listado
           </button>
         </div>
-        
+
         {loading ? (
-          <p className="mt-4 text-sm text-muted-foreground">Cargando noticia...</p>
+          <EmptyState
+            title="Cargando noticia"
+            message="Estamos obteniendo la informacion solicitada."
+            className="mt-4 py-10"
+          />
         ) : news ? (
           <NewsForm
             mode="edit"
@@ -90,7 +95,11 @@ export default function EditNewsPage() {
             onCancel={() => router.push("/admin/noticias")}
           />
         ) : (
-          <p className="mt-4 text-sm text-destructive">No se encontró la noticia solicitada.</p>
+          <ErrorState
+            title="No se encontro la noticia solicitada"
+            message="La noticia ya no existe o no se pudo cargar correctamente."
+            className="mt-4 py-10"
+          />
         )}
       </section>
     </div>

@@ -7,6 +7,7 @@ import { NewsGrid } from "@ui/components/NewsGrid"
 import { NewsSidebar } from "@ui/components/NewsSidebar"
 import { Boundary } from "@ui/components/utils/Boundary"
 import { NewsCategoryFilter, NewsSearchBar } from "@ui/components/molecules"
+import { EmptyState, ErrorState } from "@ui/components/shared"
 import {
   deriveCategories,
   deriveFilteredNews,
@@ -65,9 +66,25 @@ export function NoticiasClient({ initialNews, error }: NoticiasClientProps) {
         <div className="grid lg:grid-cols-[1fr_320px] gap-8">
           <Boundary
             when={!hasError}
-            fallback={<ErrorMessage message={error ?? "No pudimos cargar las noticias. Intenta de nuevo."} />}
+            fallback={
+              <ErrorState
+                title="No se pudieron cargar las noticias"
+                message={error ?? "No pudimos cargar las noticias. Intenta de nuevo."}
+                className="py-20"
+              />
+            }
           >
-            <Boundary when={filteredNews.length > 0} fallback={<EmptyResults />}>
+            <Boundary
+              when={filteredNews.length > 0}
+              fallback={
+                <EmptyState
+                  title="No se encontraron noticias"
+                  message="Intenta con otros terminos de busqueda o categorias."
+                  icon=":("
+                  className="py-20"
+                />
+              }
+            >
               <NewsGrid news={filteredNews} showFeatured={!activeCategory && !searchQuery} />
             </Boundary>
           </Boundary>
@@ -76,29 +93,5 @@ export function NoticiasClient({ initialNews, error }: NoticiasClientProps) {
         </div>
       </div>
     </main>
-  )
-}
-
-function EmptyResults() {
-  return (
-    <div className="text-center py-20">
-      <div className="text-5xl mb-4" aria-hidden="true">
-        :(
-      </div>
-      <h3 className="text-xl font-bold mb-2">No se encontraron noticias</h3>
-      <p className="text-muted-foreground">Intenta con otros terminos de busqueda o categorias.</p>
-    </div>
-  )
-}
-
-function ErrorMessage({ message }: { message: string }) {
-  return (
-    <div className="text-center py-20" role="alert" aria-live="assertive">
-      <div className="text-5xl mb-4" aria-hidden="true">
-        :(
-      </div>
-      <h3 className="text-xl font-bold mb-2">No se pudieron cargar las noticias</h3>
-      <p className="text-muted-foreground">{message}</p>
-    </div>
   )
 }

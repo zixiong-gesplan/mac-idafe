@@ -17,3 +17,14 @@ vi.mock("next/link", () => {
       React.createElement("a", { href, ...props }, children),
   }
 })
+
+vi.mock("next/image", () => {
+  return {
+    default: ({
+      src,
+      alt,
+      ...props
+    }: React.ImgHTMLAttributes<HTMLImageElement> & { src: string; alt: string }) =>
+      React.createElement("img", { src, alt, ...props }),
+  }
+})

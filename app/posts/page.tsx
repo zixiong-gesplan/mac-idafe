@@ -1,5 +1,4 @@
-import Link from "next/link"
-import Image from "next/image"
+﻿import { PageHero, PostListCard, SectionCardGrid } from "@ui/components/shared"
 import { getMdxPost, getMdxSlugs } from "@/lib/mdx"
 
 type PostPreview = {
@@ -36,54 +35,27 @@ export default async function PostsPage() {
   })
 
   return (
-    <main className="min-h-screen bg-background px-4 py-12 mt-20">
+    <main className="mt-20 min-h-screen bg-background px-4 py-12">
       <div className="mx-auto w-full max-w-5xl">
-        <header className="mb-10">
-          <h1 className="text-3xl font-semibold text-foreground md:text-4xl">
-            Noticias
-          </h1>
-          <p className="mt-3 text-lg text-muted-foreground">
-            Ultimas novedades y comunicados del proyecto.
-          </p>
-        </header>
+        <PageHero
+          as="header"
+          title="Noticias"
+          description="Ultimas novedades y comunicados del proyecto."
+          className="mb-10"
+        />
 
-        <div className="grid gap-6">
+        <SectionCardGrid columns={1} gridClassName="gap-6">
           {sortedPosts.map((post) => (
-            <Link
+            <PostListCard
               key={post.slug}
-              href={`/posts/${post.slug}`}
-              className="group flex flex-col gap-5 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-lg md:flex-row"
-            >
-              <div className="relative h-48 w-full overflow-hidden rounded-xl md:h-40 md:w-64">
-                {post.img ? (
-                  <Image
-                    src={post.img}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-muted-foreground">
-                    Sin imagen
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-1 flex-col">
-                <div className="text-sm text-muted-foreground">
-                  {post.date ? new Date(post.date).toLocaleDateString("es-ES") : "Sin fecha"}
-                </div>
-                <h2 className="mt-2 text-xl font-semibold text-foreground">{post.title}</h2>
-                {post.description ? (
-                  <p className="mt-2 text-muted-foreground">{post.description}</p>
-                ) : null}
-                <button className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:bg-primary/80">
-                  Leer noticia →
-                </button>
-              </div>
-            </Link>
+              slug={post.slug}
+              title={post.title}
+              date={post.date}
+              description={post.description}
+              img={post.img}
+            />
           ))}
-        </div>
+        </SectionCardGrid>
       </div>
     </main>
   )
